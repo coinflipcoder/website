@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file, request, make_response
+from flask import Flask, render_template, send_file, send_from_directory, request, make_response
 from datetime import datetime
 
 
@@ -30,6 +30,10 @@ def stylesheet():
 @app.route("/robots.txt")
 def robots():
     return send_file("assets/robots.txt")
+
+@app.route("/assets/images/<image>")
+def getImage(image):
+    return send_from_directory("./assets/images", image)
 
 @app.before_request
 def logging():

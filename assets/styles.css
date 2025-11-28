@@ -1,53 +1,112 @@
 :root {
+  /* Catppuccin Mocha Blue */
   --ctp-blue: #89b4fa;
-  --ctp-blue-rgb: 137 180 250;
-  --ctp-blue-hsl: 217.168 91.870% 75.882%;
   --ctp-text: #cdd6f4;
-  --ctp-text-rgb: 205 214 244;
-  --ctp-text-hsl: 226.154 63.934% 88.039%;
   --ctp-subtext1: #bac2de;
-  --ctp-subtext1-rgb: 186 194 222;
-  --ctp-subtext1-hsl: 226.667 35.294% 80.000%;
   --ctp-subtext0: #a6adc8;
-  --ctp-subtext0-rgb: 166 173 200;
-  --ctp-subtext0-hsl: 227.647 23.611% 71.765%;
   --ctp-overlay2: #9399b2;
-  --ctp-overlay2-rgb: 147 153 178;
-  --ctp-overlay2-hsl: 228.387 16.757% 63.725%;
   --ctp-overlay1: #7f849c;
-  --ctp-overlay1-rgb: 127 132 156;
-  --ctp-overlay1-hsl: 229.655 12.775% 55.490%;
   --ctp-overlay0: #6c7086;
-  --ctp-overlay0-rgb: 108 112 134;
-  --ctp-overlay0-hsl: 230.769 10.744% 47.451%;
   --ctp-surface2: #585b70;
-  --ctp-surface2-rgb: 88 91 112;
-  --ctp-surface2-hsl: 232.500 12.000% 39.216%;
   --ctp-surface1: #45475a;
-  --ctp-surface1-rgb: 69 71 90;
-  --ctp-surface1-hsl: 234.286 13.208% 31.176%;
   --ctp-surface0: #313244;
-  --ctp-surface0-rgb: 49 50 68;
-  --ctp-surface0-hsl: 236.842 16.239% 22.941%;
   --ctp-base: #1e1e2e;
-  --ctp-base-rgb: 30 30 46;
-  --ctp-base-hsl: 240.000 21.053% 14.902%;
   --ctp-mantle: #181825;
-  --ctp-mantle-rgb: 24 24 37;
-  --ctp-mantle-hsl: 240.000 21.311% 11.961%;
   --ctp-crust: #11111b;
-  --ctp-crust-rgb: 17 17 27;
-  --ctp-crust-hsl: 240.000 22.727% 8.627%;
+
+  /* Default Colors */
+  --text-color: var(--ctp-text);
+  --bg-color: var(--ctp-base);
+  --primary-color: var(--ctp-blue);
+}
+
+#theme-catppuccin:checked ~ .main {
+  --text-color: var(--ctp-text);
+  --bg-color: var(--ctp-base);
+  --primary-color: var(--ctp-blue);
+}
+
+#theme-amoled:checked ~ .main {
+  --text-color: #ffffff;
+  --bg-color: #000000;
+}
+
+#theme-puke:checked ~ .main {
+  --bg-color: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+    );
+  animation: gradient 0.4s linear infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 100vw 0vw;
+    --text-color: #000000;
+	}
+  100% {
+		background-position: 0vw 0vw;
+    --text-color: #ffffff;
+	}
+}
+
+/* Hides the radio buttons */
+.theme-switch {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.switch-text {
+  color: var(--text-color); 
+}
+
+.switch-label {
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* just boring css stuff */
+body {
+  background: var(--ctp-base);
+  height: 100%;
+}
+
+/* why is this not default??? */
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .main {
-  background-color: var(--ctp-base);
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: color .2s, background-color .2s;
+  height: 100%;
+}
+
+.banner > img {
+  width: 100vw;
+}
+
+.divider {
+  background: var(--primary-color);
+  height: 10px;
+  width: 100vw;
 }
 
 .bottom {
-  text-align: center;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }
-
