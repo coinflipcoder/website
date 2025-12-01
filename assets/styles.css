@@ -1,3 +1,6 @@
+/* welcome to my terribly unorganized and unoptimized css file */
+
+/* theme stuff */
 :root {
   /* Catppuccin Mocha Blue */
   --ctp-blue: #89b4fa;
@@ -14,7 +17,7 @@
   --ctp-mantle: #181825;
   --ctp-crust: #11111b;
 
-  /* Default Colors */
+  /* defaults */
   --text-color: var(--ctp-text);
   --bg-color: var(--ctp-base);
   --primary-color: var(--ctp-blue);
@@ -60,7 +63,7 @@
 	}
 }
 
-/* Hides the radio buttons */
+/* Hides the theme switch radio buttons */
 .theme-switch {
   position: absolute !important;
   height: 1px;
@@ -77,36 +80,133 @@
   color: var(--text-color);
   cursor: pointer;
 }
+/* stolen from https://alexandersandberg.github.io/theme-switcher/unlimited.html */
+
+
+
+/* font */
+@font-face {
+  font-family: 'MesloLGM Nerd Font';
+  src: url('/assets/fonts/MesloLGMNerdFont-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MesloLGM Nerd Font';
+  src: url('/assets/fonts/MesloLGMNerdFont-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MesloLGM Nerd Font';
+  src: url('/assets/fonts/MesloLGMNerdFont-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MesloLGM Nerd Font';
+  src: url('/assets/fonts/MesloLGMNerdFont-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+body, code, pre {
+  font-family: 'MeslolGM Nerd Font';
+}
+
+
 
 /* just boring css stuff */
-body {
+html, body {
   background: var(--ctp-base);
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* why is this not default??? */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* needed to make padding be inside the flex size */
+  cursor: default;
+}
+
+.banner > img {
+  width: 100%;
+  display: block;
+}
+
+.divider {
+  background: var(--primary-color);
+  height: 3px;
+  width: 100%;
+  box-shadow: 0 0 20px 5px var(--primary-color);
+  z-index: 2; /* needed to overlay content with divider gradient */
+  position: relative; /* needed to overlay content with divider gradient */
 }
 
 .main {
   background: var(--bg-color);
   color: var(--text-color);
   transition: color .2s, background-color .2s;
-  height: 100%;
+  padding-top: 10px;
+  z-index: 1; /* needed to overlay content with divider gradient */
+  position: relative; /* needed to overlay content with divider gradient */
+  display: flex; /* needed for nav / content / rightbar */
+  flex: 1; /* grow main to fit body */
 }
 
-.banner > img {
-  width: 100vw;
+.nav {
+  flex: 25%;
+  padding-left: 15%;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
 }
 
-.divider {
-  background: var(--primary-color);
-  height: 10px;
-  width: 100vw;
+.nav > .navigation {
+  display: inherit;
+  flex-direction: inherit;
+  padding-bottom: 20px;
 }
 
-.bottom {
-  width: 100%;
+.nav > .navigation > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav > .navigation > a:hover {
+  color: var(--primary-color) !important;
+  transition: color .2s;
+}
+
+.nav > .navigation > a:visited {
+  color: inherit;
+}
+
+.nav > .themeselector {
+  display: inherit;
+  flex-direction: inherit;
+}
+
+.nav > .themeselector > label:hover {
+  color: var(--primary-color) !important;
+  transition: color .2s;
+}
+
+.rightbar {
+  flex: 25%;
+}
+
+.content {
+  flex: 50%;
+}
+
+p {
+  font-size: medium;
 }

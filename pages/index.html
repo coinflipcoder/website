@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Fabi's Site</title>
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="robots" content="noindex, nofollow" />
-
-    <meta property="og:title" content="Fabis site" />
-    <meta property="og:description" content="Click for free robux!!!1" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://coinflipcoder.dev" />
-    <meta property="og:image" content="https://coinflipcoder.dev/favicon.gif" />
-
-    <meta content="#438ff2" data-react-helmet="true" name="theme-color" />
-</head>
+{% include 'components/head.html' %}
 
 <body>
-    <input type="radio" class="theme-switch" name="theme-switch" id="theme-amoled" />
-    <input type="radio" class="theme-switch" name="theme-switch" id="theme-catppuccin" />
-    <input type="radio" class="theme-switch" name="theme-switch" id="theme-puke" />
-    <!-- todo: steal theme label buttons from https://alexandersandberg.github.io/theme-switcher/unlimited.html -->
+    {% include 'components/theme_inputs.html' %}
 
     <div class="banner">
         <img src="../assets/images/banner.png" alt="Banner" />
@@ -27,7 +12,20 @@
 
     <div class="divider"></div>
 
+
     <div class="main">
+        {% include 'components/navbar.html' %}
+        <div class="content">
+            <h1>Hello there :3</h1>
+            <p>
+                I am Fabi, a young and naive programmer from Germany who will retreat to the backend upon spotting a css
+                class.
+                Its nice to meet you! On this page you will find a variety of things I have wasted my time on. Enjoy
+                your
+                stay!
+            </p>
+        </div>
+        <div class="rightbar"></div>
     </div>
 </body>
 
