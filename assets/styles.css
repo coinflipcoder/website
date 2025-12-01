@@ -19,12 +19,14 @@
 
   /* defaults */
   --text-color: var(--ctp-text);
+  --subtext-color: var(--ctp-subtext0);
   --bg-color: var(--ctp-base);
   --primary-color: var(--ctp-blue);
 }
 
 #theme-catppuccin:checked ~ .main {
   --text-color: var(--ctp-text);
+  --subtext-color: var(--ctp-subtext0);
   --bg-color: var(--ctp-base);
   --primary-color: var(--ctp-blue);
 }
@@ -49,7 +51,7 @@
     rgba(251, 7, 217, 1) 90%,
     rgba(255, 0, 0, 1) 100%
     );
-  animation: gradient 0.4s linear infinite;
+  animation: gradient 0.5s linear infinite;
 }
 
 @keyframes gradient {
@@ -143,9 +145,9 @@ html, body {
 
 .divider {
   background: var(--primary-color);
-  height: 3px;
+  height: 1px;
   width: 100%;
-  box-shadow: 0 0 20px 5px var(--primary-color);
+  box-shadow: 0 0 25px 5px var(--primary-color);
   z-index: 2; /* needed to overlay content with divider gradient */
   position: relative; /* needed to overlay content with divider gradient */
 }
@@ -158,7 +160,7 @@ html, body {
   z-index: 1; /* needed to overlay content with divider gradient */
   position: relative; /* needed to overlay content with divider gradient */
   display: flex; /* needed for nav / content / rightbar */
-  flex: 1; /* grow main to fit body */
+  height: inherit;
 }
 
 .nav {
@@ -205,8 +207,18 @@ html, body {
 
 .content {
   flex: 50%;
+  flex-direction: column;
+  display: inherit;
+  
 }
 
-p {
-  font-size: medium;
+.bottom {
+  text-align: center;
+  color: var(--subtext-color);
+  padding-bottom: 0.5%;
+  transition: color .2s;
+}
+
+.flexgrow {
+  flex: 1;
 }
