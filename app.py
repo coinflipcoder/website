@@ -29,10 +29,9 @@ def projects():
 # Assets
 #
 
-#@app.route("/favicon.ico")
-#@app.route("/favicon")
-#@app.route("/favicon.png")
-#@app.route("/favicon.gif")
+@app.route("/favicon.ico")
+@app.route("/favicon.png")
+@app.route("/favicon.gif")
 def favicon():
     return send_file("assets/favicon.gif")
 
