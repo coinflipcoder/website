@@ -3,5 +3,40 @@
         "name": "seized",
         "domain": "seized.fyi",
         "image": "seized.gif"
+    },
+    {
+        "name": "firefox",
+        "domain": "firefox.com",
+        "image": "firefox.gif"
+    },
+    {
+        "name": "anythingbutchrome",
+        "domain": "en.wikipedia.org/wiki/DeGoogle",
+        "image": "chrome.gif"
+    },
+    {
+        "name": "ublock",
+        "domain": "ublockorigin.com",
+        "image": "ublockorigin.png"
+    },
+    {
+        "name": "sabnzbd",
+        "domain": "sabnzbd.org",
+        "image": "piracy.png"
+    },
+    {
+        "name": "adhd",
+        "domain": "youtube.com/playlist?list=PL6HF94r1ogByYa2xFAXIE_1Pw-K0AU_Vd",
+        "image": "adhd.png"
+    },
+    {
+        "name": "thunderbird",
+        "domain": "thunderbird.net",
+        "image": "thunderbird.gif"
+    },
+    {
+        "name": "bitwarden",
+        "domain": "bitwarden.com",
+        "image": "bitwarden.png"
     }
 ]
