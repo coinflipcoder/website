@@ -1,12 +1,15 @@
 from flask import Flask, render_template, send_file, send_from_directory, request, make_response, redirect
 from datetime import datetime
-
+import database_handler
 
 app = Flask(__name__, template_folder="pages")
 
+# Initialize Database
+database_handler.createTables()
 
+counter = database_handler.getButtonValue()
 year = datetime.now().year
-counter = 0
+
 
 #
 # Pages
@@ -34,6 +37,7 @@ def projects():
 def clicked():
     global counter
     counter += 1
+    database_handler.insertButtonLog(counter, request.headers.get("User-Agent"), request.remote_addr) # Gotta find out if im even allowed to do this
     return redirect("/")
 
 
