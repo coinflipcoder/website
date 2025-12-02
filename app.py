@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file, send_from_directory, request, make_response
+from flask import Flask, render_template, send_file, send_from_directory, request, make_response, redirect
 from datetime import datetime
 
 
@@ -6,6 +6,7 @@ app = Flask(__name__, template_folder="pages")
 
 
 year = datetime.now().year
+counter = 0
 
 #
 # Pages
@@ -18,11 +19,22 @@ def index():
         response.mimetype = "text/plain"
         return response
 
-    return render_template("index.html", year=year)
+    return render_template("index.html", year=year, clicks=counter)
 
 @app.route("/projects")
 def projects():
     return render_template("projects.html", year=year)
+
+
+#
+# Functions
+#
+
+@app.route('/increment', methods=['POST'])
+def clicked():
+    global counter
+    counter += 1
+    return redirect("/")
 
 
 #

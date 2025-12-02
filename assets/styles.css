@@ -20,8 +20,9 @@
   /* defaults */
   --text-color: var(--ctp-text);
   --subtext-color: var(--ctp-subtext0);
-  --bg-color: var(--ctp-base);
   --primary-color: var(--ctp-blue);
+  --bg-color: var(--ctp-base);
+  --surface-color: var(--ctp-surface0);
 }
 
 #theme-catppuccin:checked ~ .main {
@@ -221,4 +222,30 @@ html, body {
 
 .flexgrow {
   flex: 1;
+}
+
+.paragraph {
+  margin-top: 5%;
+}
+
+.thebutton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.thebutton > form > button {
+  background: var(--surface-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.thebutton > form > button:hover {
+  box-shadow: 0 0 8px 2px var(--primary-color);
+  transition: box-shadow 0.2s;
 }

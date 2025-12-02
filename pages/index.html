@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
-
 {% include 'components/head.html' %}
 
 <body>
-    {% include 'components/theme_inputs.html' %}
+  {% include 'components/theme_inputs.html' %}
 
-    <div class="banner">
-        <img src="../assets/images/banner-mountains.jpg" alt="Banner" draggable="false" />
+  <div class="banner">
+    <img src="../assets/images/banner-mountains.jpg" alt="Banner" draggable="false" />
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="main">
+    {% include 'components/navbar.html' %}
+    <div class="content">
+      <h2>Hello there :3</h2>
+      <p>
+        I am Fabi, a young and naive programmer from Germany who will retreat
+        to the backend upon spotting a css class. Its nice to meet you! On
+        this page you will find a variety of things I have wasted my time on.
+      </p>
+
+      <h2 class="paragraph">Big number go uppies</h2>
+
+      <div class="thebutton">
+        <form method="POST" action="/increment">
+          <button>The button</button>
+        </form>
+        <p>Clicks: {{clicks}}</p>
+      </div>
+
+      <div class="flexgrow"></div>
+      {% include 'components/footer.html' %}
     </div>
-
-    <div class="divider"></div>
-
-
-    <div class="main">
-        {% include 'components/navbar.html' %}
-        <div class="content">
-            <h2>Hello there :3</h2>
-            <p>
-                I am Fabi, a young and naive programmer from Germany who will retreat to the backend upon spotting a css
-                class.
-                Its nice to meet you! On this page you will find a variety of things I have wasted my time on.
-            </p>
-
-            <div class="flexgrow"></div>
-            {% include 'components/footer.html' %}
-        </div>
-        <div class="rightbar"></div>
-    </div>
+    <div class="rightbar"></div>
+  </div>
 </body>
 
 </html>
