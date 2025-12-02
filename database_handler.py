@@ -24,7 +24,6 @@ def createTables():
     print("All tables created..")
 
 def insertButtonLog(value, useragent, ip):
-    print("Button pressed. Inserting into log...")
     with connect(database) as conn:
         cursor = conn.cursor()
         cursor.execute(buttonLogInsert, (str(uuid4()), value, useragent, ip))

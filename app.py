@@ -1,6 +1,8 @@
 from flask import Flask, render_template, send_file, send_from_directory, request, make_response, redirect
 from datetime import datetime
+import requests
 import database_handler
+import json
 
 app = Flask(__name__, template_folder="pages")
 
@@ -9,6 +11,14 @@ database_handler.createTables()
 
 counter = database_handler.getButtonValue()
 year = datetime.now().year
+fact = requests.get('https://uselessfacts.jsph.pl/api/v2/facts/random').json()
+people_buttons = {}
+
+with open('assets/people_buttons.json', 'r') as file:
+    people_buttons = json.load(file)
+
+with open('assets/silly_buttons.json', 'r') as file:
+    silly_buttons = json.load(file)
 
 
 #
@@ -22,7 +32,7 @@ def index():
         response.mimetype = "text/plain"
         return response
 
-    return render_template("index.html", year=year, clicks=counter)
+    return render_template("index.html", year=year, clicks=counter, fact=fact['text'], source=fact['permalink'], people_buttons=people_buttons, silly_buttons=silly_buttons)
 
 @app.route("/projects")
 def projects():
@@ -38,7 +48,13 @@ def clicked():
     global counter
     counter += 1
     database_handler.insertButtonLog(counter, request.headers.get("User-Agent"), request.remote_addr) # Gotta find out if im even allowed to do this
-    return redirect("/")
+    return redirect('/')
+
+@app.route('/reroll', methods=['POST'])
+def rerollFact():
+    global fact
+    fact = requests.get('https://uselessfacts.jsph.pl/api/v2/facts/random').json()
+    return redirect('/')
 
 
 #
@@ -66,6 +82,10 @@ def getImage(image):
 @app.route("/assets/fonts/<font>")
 def getFont(font):
     return send_from_directory("./assets/fonts", font)
+
+@app.route('/assets/88x31s/<image>')
+def getButton(image):
+    return send_from_directory('./assets/88x31s', image)
 
 
 

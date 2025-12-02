@@ -6,7 +6,7 @@
   {% include 'components/theme_inputs.html' %}
 
   <div class="banner">
-    <img src="../assets/images/banner-mountains.jpg" alt="Banner" draggable="false" />
+    <img src="../assets/images/banner-mountains.avif" alt="Banner" draggable="false" />
   </div>
 
   <div class="divider"></div>
@@ -21,14 +21,39 @@
         this page you will find a variety of things I have wasted my time on.
       </p>
 
+      <h2 class="paragraph">Useless fact</h2>
+      <div class="thebutton">
+        <form method="POST" action="/reroll">
+          <button>Reroll</button>
+        </form>
+        <p>{{ fact }} <a class="linkicon" href="{{ source }}" target="_blank">&#xf465;</a> </p>
+      </div>
+      
       <h2 class="paragraph">Big number go uppies</h2>
-
       <div class="thebutton">
         <form method="POST" action="/increment">
           <button>The button</button>
         </form>
         <p>Clicks: {{clicks}}</p>
       </div>
+
+      <h2 class="paragraph">Silly Buttons</h2>
+      <div class="eightyeightxthirtythree_grid">
+        {% for person in people_buttons %}
+        <a href="https://{{ person['domain'] }}" target="_blank">
+          <img class="eightyeightxthirtythree_button" src="/assets/88x31s/{{ person['image'] }}" width="88" height="31", alt="{{ person['name'] }}" />
+        </a>
+        {% endfor %}
+      </div>
+
+      <div class="eightyeightxthirtythree_grid">
+        {% for person in silly_buttons %}
+        <a href="https://{{ person['domain'] }}" target="_blank">
+          <img class="eightyeightxthirtythree_button" src="/assets/88x31s/{{ person['image'] }}" width="88" height="31", alt="{{ person['name'] }}" />
+        </a>
+        {% endfor %}
+      </div>
+
 
       <div class="flexgrow"></div>
       {% include 'components/footer.html' %}
