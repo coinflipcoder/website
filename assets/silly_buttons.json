@@ -68,5 +68,10 @@
         "name": "blahaj",
         "domain": "https://www.ikea.com/de/de/p/blahaj-stoffspielzeug-hai-30373588",
         "image": "love-blahaj.gif"
+    },
+    {
+        "name": "iusearchbtw",
+        "domain": "https://archlinux.org",
+        "image": "archlinux.png"
     }
 ]
