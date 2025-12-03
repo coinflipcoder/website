@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Fabi",
+        "domain": "https://coinflipcoder.dev",
+        "image": "fabi.gif"
+    },
+    {
+        "name": "Lina",
+        "domain": "https://lina.sh",
+        "image": "lina.gif"
+    },
+    {
+        "name": "Atomicbyte",
+        "domain": "https://jaisal.dev",
+        "image": "atomicbyte.gif"
+    },
+    {
+        "name": "Mat",
+        "domain": "https://matdoes.dev",
+        "image": "mat.png"
+    },
+    {
+        "name": "Niko",
+        "domain": "https://nikolan.xyz",
+        "image": "nikolan.png"
+    },
+    {
+        "name": "Funtimes909",
+        "domain": "https://funtimes909.xyz",
+        "image": "funtimes909.png"
+    },
+    {
+        "name": "magmaus3",
+        "domain": "https://magmaus3.eu.org",
+        "image": "magmaus3.png"
+    },
+    {
+        "name": "restartb",
+        "domain": "https://restartb.xyz",
+        "image": "restartb.png"
+    },
+    {
+        "name": "tufo",
+        "domain": "https://tufo.dev",
+        "image": "tufo.png"
+    },
+    {
+        "name": "rain",
+        "domain": "https://slonk.ing",
+        "image": "slonk.gif"
+    },
+    {
+        "name": "northernside",
+        "domain": "https://northernsi.de",
+        "image": "northernside.png"
+    },
+    {
+        "name": "honbra",
+        "domain": "https://honbra.com",
+        "image": "honbra.png"
+    },
+    {
+        "name": "paddy",
+        "domain": "https://paddy.li",
+        "image": "paddyk45.png"
+    },
+    {
+        "name": "cbax",
+        "domain": "https://cbax.dev",
+        "image": "cbax.png"
+    },
+    {
+        "name": "potato camputer",
+        "domain": "https://sandcat.lol",
+        "image":  "tom.png"
+    }
+]

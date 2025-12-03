@@ -1,42 +1,72 @@
 [
     {
         "name": "seized",
-        "domain": "seized.fyi",
+        "domain": "https://seized.fyi",
         "image": "seized.gif"
     },
     {
         "name": "firefox",
-        "domain": "firefox.com",
+        "domain": "https://firefox.com",
         "image": "firefox.gif"
     },
     {
         "name": "anythingbutchrome",
-        "domain": "en.wikipedia.org/wiki/DeGoogle",
-        "image": "chrome.gif"
+        "domain": "https://en.wikipedia.org/wiki/DeGoogle",
+        "image": "chrome.png"
     },
     {
         "name": "ublock",
-        "domain": "ublockorigin.com",
-        "image": "ublockorigin.png"
+        "domain": "https://ublockorigin.com",
+        "image": "ublock.png"
     },
     {
         "name": "sabnzbd",
-        "domain": "sabnzbd.org",
+        "domain": "https://sabnzbd.org",
         "image": "piracy.png"
     },
     {
         "name": "adhd",
-        "domain": "youtube.com/playlist?list=PL6HF94r1ogByYa2xFAXIE_1Pw-K0AU_Vd",
+        "domain": "https://youtube.com/playlist?list=PL6HF94r1ogByYa2xFAXIE_1Pw-K0AU_Vd",
         "image": "adhd.png"
     },
     {
         "name": "thunderbird",
-        "domain": "thunderbird.net",
+        "domain": "https://thunderbird.net",
         "image": "thunderbird.gif"
     },
     {
         "name": "bitwarden",
-        "domain": "bitwarden.com",
+        "domain": "https://bitwarden.com",
         "image": "bitwarden.png"
+    },
+    {
+        "name": "dontfeedtheai",
+        "domain": "",
+        "image": "ai.gif"
+    },
+    {
+        "name": "halflife",
+        "domain": "steam://rungameid:70",
+        "image": "hl.png"
+    },
+    {
+        "name": "fuckmicrosoft",
+        "domain": "",
+        "image": "hatems.png"
+    },
+    {
+        "name": "eightyeightthirtyone",
+        "domain": "https://eightyeightthirty.one",
+        "image": "eightyeightthirtyone.png"
+    },
+    {
+        "name": "matrixdotorg",
+        "domain": "https://matrix.org",
+        "image": "matrix.png"
+    },
+    {
+        "name": "blahaj",
+        "domain": "https://www.ikea.com/de/de/p/blahaj-stoffspielzeug-hai-30373588",
+        "image": "love-blahaj.gif"
     }
 ]

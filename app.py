@@ -12,10 +12,9 @@ database_handler.createTables()
 counter = database_handler.getButtonValue()
 year = datetime.now().year
 fact = requests.get('https://uselessfacts.jsph.pl/api/v2/facts/random').json()
-people_buttons = {}
 
-with open('assets/people_buttons.json', 'r') as file:
-    people_buttons = json.load(file)
+with open('assets/friend_buttons.json', 'r') as file:
+    friend_buttons = json.load(file)
 
 with open('assets/silly_buttons.json', 'r') as file:
     silly_buttons = json.load(file)
@@ -32,7 +31,7 @@ def index():
         response.mimetype = "text/plain"
         return response
 
-    return render_template("index.html", year=year, clicks=counter, fact=fact['text'], source=fact['permalink'], people_buttons=people_buttons, silly_buttons=silly_buttons)
+    return render_template("index.html", year=year, clicks=counter, fact=fact['text'], source=fact['permalink'], friend_buttons=friend_buttons, silly_buttons=silly_buttons)
 
 @app.route("/projects")
 def projects():

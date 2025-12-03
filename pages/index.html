@@ -39,17 +39,17 @@
 
       <h2 class="paragraph">Silly Buttons</h2>
       <div class="eightyeightxthirtythree_grid">
-        {% for person in people_buttons %}
-        <a href="https://{{ person['domain'] }}" target="_blank">
-          <img class="eightyeightxthirtythree_button" src="/assets/88x31s/{{ person['image'] }}" width="88" height="31", alt="{{ person['name'] }}" />
+        {% for friend in friend_buttons %}
+        <a href="{{ friend['domain'] }}" target="_blank">
+          <img class="eightyeightxthirtythree_button" src="/assets/88x31s/{{ friend['image'] }}" width="88" height="31", alt="{{ friend['name'] }}" />
         </a>
         {% endfor %}
       </div>
 
       <div class="eightyeightxthirtythree_grid">
-        {% for person in silly_buttons %}
-        <a href="https://{{ person['domain'] }}" target="_blank">
-          <img class="eightyeightxthirtythree_button" src="/assets/88x31s/{{ person['image'] }}" width="88" height="31", alt="{{ person['name'] }}" />
+        {% for button in silly_buttons %}
+        <a href="{{ button['domain'] }}" target="_blank">
+          <img class="eightyeightxthirtythree_button" src="/assets/88x31s/{{ button['image'] }}" width="88" height="31", alt="{{ button['name'] }}" />
         </a>
         {% endfor %}
       </div>

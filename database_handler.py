@@ -34,4 +34,5 @@ def getButtonValue():
         cursor = conn.cursor()
         cursor.execute(buttonLogGetValue)
         value = cursor.fetchone()
+        if value == None: return 0
         return value[0]

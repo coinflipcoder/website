@@ -225,7 +225,7 @@ html, body {
 }
 
 .paragraph {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .thebutton {
@@ -253,6 +253,7 @@ html, body {
 .linkicon {
   cursor: pointer;
   color: var(--subtext-color);
+  text-decoration: none;
 }
 
 .linkicon:hover {
@@ -262,9 +263,15 @@ html, body {
 
 .eightyeightxthirtythree_grid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
   image-rendering: pixelated;
+  gap: 5px;
+  margin-top: 10px
+}
+
+.eightyeightxthirtythree_button {
+  display: block;
 }
 
 .eightyeightxthirtythree_button:hover {
