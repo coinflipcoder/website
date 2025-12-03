@@ -3,6 +3,7 @@ from datetime import datetime
 import requests
 import database_handler
 import json
+from consts import FACT_URL
 
 app = Flask(__name__, template_folder="pages")
 
@@ -11,7 +12,7 @@ database_handler.createTables()
 
 counter = database_handler.getButtonValue()
 year = datetime.now().year
-fact = requests.get('https://uselessfacts.jsph.pl/api/v2/facts/random').json()
+fact = requests.get(FACT_URL).json()
 
 with open('assets/friend_buttons.json', 'r') as file:
     friend_buttons = json.load(file)
@@ -52,7 +53,7 @@ def clicked():
 @app.route('/reroll', methods=['POST'])
 def rerollFact():
     global fact
-    fact = requests.get('https://uselessfacts.jsph.pl/api/v2/facts/random').json()
+    fact = requests.get(FACT_URL).json()
     return redirect('/')
 
 
