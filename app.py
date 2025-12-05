@@ -62,14 +62,13 @@ def blogPage():
 def clicked():
   global counter
   counter += 1
-  if request.headers.get("X-Real-IP") != None: 
-    ip = request.headers.get("X-Real-IP")
+
+  real_ip = request.headers.get("X-Real-IP")
+  if real_ip != None: 
+    ip = real_ip
   else:
     ip = request.remote_addr
-
-  remote_ip = request.headers.get("X-Real-IP")
-  print("Incrementing counter :3")
-  print(f"this is whats getting put in: {remote_ip} {ip}")
+  
   database_handler.insertButtonLog(counter, request.headers.get("User-Agent"), ip) # Gotta find out if im even allowed to do this
   return redirect('/')
 
