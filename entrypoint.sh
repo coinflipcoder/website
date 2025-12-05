@@ -2,4 +2,10 @@
 
 cp -r /app/assets/* /static/
 
-exec gunicorn app:app --workers 1 --threads 8 --bind 0.0.0.0:8000
+# Environment variables
+WORKERS="${GUNICORN_WORKERS:-1}"
+THREADS="${GUNICORN_THREADS:-8}"
+BIND="${GUNICORN_BIND:-0.0.0.0}"
+PORT="${GUNICORN_PORT:-8000}"
+
+exec gunicorn app:app --workers "$WORKERS" --threads "$THREADS" --bind "$BIND":"$PORT"
