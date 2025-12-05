@@ -46,8 +46,8 @@
         "languages": ["java"],
         "description": "Small Minecraft Paper plugin that makes the dragon fight incresingly more difficult.",
         "links": [
-            { "url": "https://github.com/coinflipcoder/Harder-Dragon", "name": "github" },
-            { "url": "https://modrinth.com/plugin/harder-dragon", "name": "modrinth" }
+            { "url": "https://github.com/coinflipcoder/Harder-Dragon", "name": "Github" },
+            { "url": "https://modrinth.com/plugin/harder-dragon", "name": "Modrinth" }
         ]
     },
     {
