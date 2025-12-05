@@ -15,6 +15,26 @@
                 Here are some of the things I have worked on.
             </p>
 
+            {% for project in projects %}
+            <div class="projecttitle">
+                <h2>{{ project['title'] }}</h2>
+                {% for language in project['languages'] %}
+                <span title="{{ language }}">{{ language | langicon | safe }}</span>
+                {% endfor %}
+            </div>
+
+            <p> {{ project['description'] }} </p>
+
+            <div class="projectlinks">
+                {% for link in project['links'] %}
+                    <p>[</p>
+                    <a href="{{ link['url'] }}">{{ link['name'] }}</a>
+                    <p>]</p>
+                {% endfor %}
+            </div>
+ 
+            {% endfor %}
+
             <div class="flexgrow"></div>
             {% include 'components/footer.html' %}
 

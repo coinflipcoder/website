@@ -4,8 +4,12 @@ import requests
 import database_handler
 import json
 from consts import FACT_URL
+from jinja_filters import create_filters
 
 app = Flask(__name__, template_folder="pages")
+
+# Create custom jinja filters
+create_filters(app)
 
 # Initialize Database
 database_handler.createTables()
@@ -14,11 +18,14 @@ counter = database_handler.getButtonValue()
 year = datetime.now().year
 fact = requests.get(FACT_URL).json()
 
-with open('assets/friend_buttons.json', 'r') as file:
+with open('pages/content/friend_buttons.json', 'r') as file:
     friend_buttons = json.load(file)
 
-with open('assets/silly_buttons.json', 'r') as file:
+with open('pages/content/silly_buttons.json', 'r') as file:
     silly_buttons = json.load(file)
+
+with open('pages/content/projects.json', 'r') as file:
+    projects = json.load(file)
 
 
 #
@@ -26,7 +33,7 @@ with open('assets/silly_buttons.json', 'r') as file:
 #
 
 @app.route("/")
-def index():
+def mainPage():
     if ("curl" in request.headers.get("User-Agent").lower()):
         response = make_response(boykisser, 200)
         response.mimetype = "text/plain"
@@ -35,8 +42,8 @@ def index():
     return render_template("index.html", year=year, clicks=counter, fact=fact['text'], source=fact['permalink'], friend_buttons=friend_buttons, silly_buttons=silly_buttons)
 
 @app.route("/projects")
-def projects():
-    return render_template("projects.html", year=year)
+def projectsPage():
+    return render_template("projects.html", year=year, projects=projects)
 
 
 #

@@ -181,6 +181,7 @@ html, body {
 .nav > .navigation > a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .nav > .navigation > a:hover {
@@ -195,6 +196,10 @@ html, body {
 .nav > .themeselector {
   display: inherit;
   flex-direction: inherit;
+}
+
+.nav > .themeselector > label {
+  transition: color 0.2s;
 }
 
 .nav > .themeselector > label:hover {
@@ -243,6 +248,7 @@ html, body {
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
+  transition: box-shadow 0.2s;
 }
 
 .thebutton > form > button:hover {
@@ -277,4 +283,49 @@ html, body {
 .eightyeightxthirtythree_button:hover {
   cursor: pointer;
   box-shadow: 0 0 8px 2px var(--primary-color);
+}
+
+.projecttitle {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.projecttitle > h2 {
+  margin-right: 25px;
+}
+
+.projecttitle > span {
+  font-size: x-large;
+  color: var(--subtext-color);
+  transition: color 0.2s;
+  margin-right: 15px;
+}
+
+.projecttitle > span:hover {
+  color: var(--primary-color);
+  transition: color 0.2s;
+}
+
+.projectlinks {
+  display: flex;
+  margin-top: 5px;
+}
+
+.projectlinks > p {
+  color: var(--surface-color);
+  font-weight: bold;
+}
+
+.projectlinks > a {
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.2s;
+}
+
+.projectlinks > a:hover {
+  color: var(--primary-color);
+  transition: color 0.2s;
 }

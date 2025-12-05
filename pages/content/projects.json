@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Website",
+        "languages": ["python", "html", "css"],
+        "description": "This website is built using Flask, deployed via Gunicorn. It uses Jinja templates to serve HTML files. Look ma, no Javascript!",
+        "links": [{"url": "temp", "name": "Github"}, {"url": "temp", "name": "Github"}]
+    },
+    {
+        "title": "two",
+        "languages": ["java"],
+        "description": "temp",
+        "links": [{"url": "temp", "name": "temp"}]
+    }
+]
