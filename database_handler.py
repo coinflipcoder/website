@@ -4,6 +4,10 @@ from os import getenv
 
 DATABASE_FILE = getenv("DATABASE_PATH", "./database.db")
 
+counterTable = '''CREATE TABLE IF NOT EXISTS counter (
+    value INTEGER NOT NULL DEFAULT 0
+  );'''
+
 buttonLogTable = '''CREATE TABLE IF NOT EXISTS button_log (
     uuid TEXT PRIMARY KEY,
     value INTEGER NOT NULL,
@@ -12,25 +16,36 @@ buttonLogTable = '''CREATE TABLE IF NOT EXISTS button_log (
     ip TEXT
   );'''
 
+buttonIncrement = 'UPDATE counter SET value = value + 1 RETURNING value;'
+buttonValue = 'SELECT value FROM counter;'
 buttonLogInsert = 'INSERT INTO button_log(uuid, value, useragent, ip) VALUES(?,?,?,?)'
-buttonLogGetValue = 'SELECT value FROM button_log ORDER BY value DESC LIMIT 1'
 
 def createTables():
   with connect(DATABASE_FILE) as conn:
     cursor = conn.cursor()
+    # Create the table that stores the current count
+    cursor.execute(counterTable)
+
+    # If that table is empty, set the value to 0
+    cursor.execute('SELECT COUNT(*) FROM counter')
+    if cursor.fetchone()[0] == 0:
+      cursor.execute('INSERT INTO counter DEFAULT VALUES')
+
     cursor.execute(buttonLogTable)
     conn.commit()
 
-def insertButtonLog(value, useragent, ip):
+def increment(useragent, ip):
   with connect(DATABASE_FILE) as conn:
     cursor = conn.cursor()
-    cursor.execute(buttonLogInsert, (str(uuid4()), value, useragent, ip))
+    cursor.execute(buttonIncrement)
+    new_count = cursor.fetchone()[0]
+
+    cursor.execute(buttonLogInsert, (str(uuid4()), new_count, useragent, ip))
     conn.commit()
+    return new_count
 
 def getButtonValue():
   with connect(DATABASE_FILE) as conn:
     cursor = conn.cursor()
-    cursor.execute(buttonLogGetValue)
-    value = cursor.fetchone()
-    if value == None: return 0
-    return value[0]
+    cursor.execute(buttonValue)
+    return cursor.fetchone()[0]
