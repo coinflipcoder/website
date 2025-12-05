@@ -1,71 +1,128 @@
 [
-    {
-        "title": "Website",
-        "languages": ["python", "html", "css"],
-        "description": "This website is built using Flask and deployed via Gunicorn. It uses Jinja to serve dynamic HTML files. Look ma, no Javascript!",
-        "links": [
-            {"url": "https://github.com/coinflipcoder/website", "name": "Github"}
-        ]
-    },
-    {
-        "title": "Velocity Plugin",
-        "languages": ["java"],
-        "description": "A Minecraft Velocity plugin tailored to my network. It will not work on your server, but be my guest to do some tactical communism in my code.",
-        "links": [
-            {"url": "https://github.com/coinflipcoder/CustomPlugin", "name": "Github"}
-        ]
-    },
-    {
-        "title": "No Join Leave Message",
-        "languages": ["java"],
-        "description": "Quick and dirty Minecraft Fabric mod that disabled joining and leaving messages.",
-        "links": [
-            {"url": "https://github.com/coinflipcoder/No-Join-Leave-Message", "name": "Github"},
-            {"url": "https://modrinth.com/mod/no-join-leave-messages", "name": "Modrinth"}
-        ]
-    },
-    {
-        "title": "Better Beacon Range",
-        "languages": ["java"],
-        "description": "Minecraft Fabric mod that makes the beacon effect range configurable.",
-        "links": [
-            {"url": "https://github.com/coinflipcoder/Better-Beacon-Range", "name": "Github"},
-            {"url": "https://modrinth.com/mod/better-beacon-range-was-taken", "name": "Modrinth"}
-        ]
-    },
-    {
-        "title": "Neon",
-        "languages": ["java"],
-        "description": "A Minecraft Fabric hacked client that I made to play on LiveOverflow's server. A lot of this code is 'borrowed' from other clients as this was my learning project.",
-        "links": [
-            {"url": "https://github.com/coinflipcoder/neon", "name": "Github"}
-        ]
-    },
-    {
-        "title": "Harder Dragon",
-        "languages": ["java"],
-        "description": "Small Minecraft Paper plugin that makes the dragon fight incresingly more difficult.",
-        "links": [
-            { "url": "https://github.com/coinflipcoder/Harder-Dragon", "name": "Github" },
-            { "url": "https://modrinth.com/plugin/harder-dragon", "name": "Modrinth" }
-        ]
-    },
-    {
-        "title": "Bad Discord Bot",
-        "languages": ["python"],
-        "description": "A very bad and probably non functional Discord bot written in Python. The Framework I made is really nice :)",
-        "links": [
-            {"url": "https://github.com/coinflipcoder/DiscordBot", "name": "Github"}
-        ]
-    },
-    {
-        "title": "Activecraft-Core",
-        "languages": ["java"],
-        "description": "This Minecraft plugin was the project that got me into programming. It was a lot of fun to work on it and its other modules at the time. Sadly, it was abandoned a long time ago.",
-        "links": [
-            {"url": "https://github.com/ActiveCraftPlugins/ActiveCraft-Core", "name": "Github"},
-            {"url": "https://www.spigotmc.org/resources/activecraft-core.95488", "name": "Spigot"},
-            {"url": "https://cplaiz.github.io/ActiveCraft-Core", "name": "Docs"}
-        ]
-    }
+  {
+    "title": "Website",
+    "languages": [
+      "python",
+      "html",
+      "css"
+    ],
+    "description": "This website is built using Flask and deployed via Gunicorn. It uses Jinja to serve dynamic HTML files. Look ma, no Javascript!",
+    "links": [
+      {
+        "url": "https://github.com/coinflipcoder/website",
+        "name": "Github"
+      }
+    ]
+  },
+  {
+    "title": "Velocity Plugin",
+    "languages": [
+      "java"
+    ],
+    "description": "A Minecraft Velocity plugin tailored to my network. It will not work on your server, but be my guest to do some tactical communism in my code.",
+    "links": [
+      {
+        "url": "https://github.com/coinflipcoder/CustomPlugin",
+        "name": "Github"
+      }
+    ]
+  },
+  {
+    "title": "No Join Leave Message",
+    "languages": [
+      "java"
+    ],
+    "description": "Quick and dirty Minecraft Fabric mod that disabled joining and leaving messages.",
+    "links": [
+      {
+        "url": "https://github.com/coinflipcoder/No-Join-Leave-Message",
+        "name": "Github"
+      },
+      {
+        "url": "https://modrinth.com/mod/no-join-leave-messages",
+        "name": "Modrinth"
+      }
+    ]
+  },
+  {
+    "title": "Better Beacon Range",
+    "languages": [
+      "java"
+    ],
+    "description": "Minecraft Fabric mod that makes the beacon effect range configurable.",
+    "links": [
+      {
+        "url": "https://github.com/coinflipcoder/Better-Beacon-Range",
+        "name": "Github"
+      },
+      {
+        "url": "https://modrinth.com/mod/better-beacon-range-was-taken",
+        "name": "Modrinth"
+      }
+    ]
+  },
+  {
+    "title": "Neon",
+    "languages": [
+      "java"
+    ],
+    "description": "A Minecraft Fabric hacked client that I made to play on LiveOverflow's server. A lot of this code is 'borrowed' from other clients as this was my learning project.",
+    "links": [
+      {
+        "url": "https://github.com/coinflipcoder/neon",
+        "name": "Github"
+      }
+    ]
+  },
+  {
+    "title": "Harder Dragon",
+    "languages": [
+      "java"
+    ],
+    "description": "Small Minecraft Paper plugin that makes the dragon fight incresingly more difficult.",
+    "links": [
+      {
+        "url": "https://github.com/coinflipcoder/Harder-Dragon",
+        "name": "Github"
+      },
+      {
+        "url": "https://modrinth.com/plugin/harder-dragon",
+        "name": "Modrinth"
+      }
+    ]
+  },
+  {
+    "title": "Bad Discord Bot",
+    "languages": [
+      "python"
+    ],
+    "description": "A very bad and probably non functional Discord bot written in Python. The Framework I made is really nice :)",
+    "links": [
+      {
+        "url": "https://github.com/coinflipcoder/DiscordBot",
+        "name": "Github"
+      }
+    ]
+  },
+  {
+    "title": "Activecraft-Core",
+    "languages": [
+      "java"
+    ],
+    "description": "This Minecraft plugin was the project that got me into programming. It was a lot of fun to work on it and its other modules at the time. Sadly, it was abandoned a long time ago.",
+    "links": [
+      {
+        "url": "https://github.com/ActiveCraftPlugins/ActiveCraft-Core",
+        "name": "Github"
+      },
+      {
+        "url": "https://www.spigotmc.org/resources/activecraft-core.95488",
+        "name": "Spigot"
+      },
+      {
+        "url": "https://cplaiz.github.io/ActiveCraft-Core",
+        "name": "Docs"
+      }
+    ]
+  }
 ]

@@ -123,7 +123,7 @@ body, code, pre {
 
 
 /* just boring css stuff */
-html, body {
+body {
   background: var(--ctp-base);
   width: 100vw;
   min-height: 100vh;
@@ -161,7 +161,7 @@ html, body {
   z-index: 1; /* needed to overlay content with divider gradient */
   position: relative; /* needed to overlay content with divider gradient */
   display: flex; /* needed for nav / content / rightbar */
-  min-height: inherit;
+  flex: 1; /* grow main content to full body height */
 }
 
 .nav {
@@ -224,7 +224,8 @@ html, body {
 .bottom {
   text-align: center;
   color: var(--subtext-color);
-  padding-bottom: 0.5%;
+  margin-bottom: 0.5%;
+  margin-top: 1%;
   transition: color .2s;
 }
 
@@ -344,4 +345,48 @@ html, body {
 .itsallminecraft > img {
   border-radius: 6px;
   display: block;
+}
+
+.contact {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact > div > a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact > div > a:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+
+.gpgdownload {
+  display: flex;
+  margin-top: 5px;
+}
+
+.gpgdownload > p {
+  color: var(--surface-color);
+  font-weight: bold;
+}
+
+.gpgdownload > a {
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.2s;
+}
+
+.gpgdownload > a:hover {
+  color: var(--primary-color);
+  transition: color 0.2s;
+  cursor: pointer;
 }

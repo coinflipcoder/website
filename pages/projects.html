@@ -1,51 +1,49 @@
 <!DOCTYPE html>
-
 <html>
-
 {% include 'components/head.html' %}
 
 <body>
-    {% include 'components/theme_inputs.html' %}
+  {% include 'components/theme_inputs.html' %}
 
-    <div class="main">
-        {% include 'components/navbar.html' %}
-        <div class="content">
-            <h2 class="headline">Obligatory projects page</h2>
-            <p>
-                Here are some of the things I have worked on.
-            </p>
+  <div class="main">
+    {% include 'components/navbar.html' %}
+    <div class="content">
+      <h2 class="headline">Obligatory projects page</h2>
+      <p>
+        Here are some of the things I have worked on.
+      </p>
 
-            {% for project in projects %}
-            <div class="projecttitle">
-                <h2>{{ project['title'] }}</h2>
-                {% for language in project['languages'] %}
-                <span title="{{ language }}">{{ language | langicon | safe }}</span>
-                {% endfor %}
-            </div>
+      {% for project in projects %}
+      <div class="projecttitle">
+        <h2>{{ project['title'] }}</h2>
+        {% for language in project['languages'] %}
+        <span title="{{ language }}">{{ language | langicon | safe }}</span>
+        {% endfor %}
+      </div>
 
-            <p> {{ project['description'] }} </p>
+      <p> {{ project['description'] }} </p>
 
-            <div class="projectlinks">
-                {% for link in project['links'] %}
-                <p>[</p>
-                <a href="{{ link['url'] }}">{{ link['name'] }}</a>
-                <p>]</p>
-                {% endfor %}
-            </div>
+      <div class="projectlinks">
+        {% for link in project['links'] %}
+        <p>[</p>
+        <a href="{{ link['url'] }}">{{ link['name'] }}</a>
+        <p>]</p>
+        {% endfor %}
+      </div>
 
-            {% endfor %}
+      {% endfor %}
 
-            <div class="flexgrow"></div>
+      <div class="flexgrow"></div>
 
-            <div class="itsallminecraft">
-                <img src="/assets/images/itsallminecraft.png" alt="Wait, its all Minecraft?!" draggable="false" />
-            </div>
+      <div class="itsallminecraft">
+        <img src="/assets/images/itsallminecraft.png" alt="Wait, its all Minecraft?!" draggable="false" />
+      </div>
 
-            {% include 'components/footer.html' %}
+      {% include 'components/footer.html' %}
 
-        </div>
-        <div class="rightbar"></div>
     </div>
+    <div class="rightbar"></div>
+  </div>
 </body>
 
 </html>
