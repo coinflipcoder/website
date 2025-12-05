@@ -66,6 +66,8 @@ def clicked():
     ip = request.headers.get("X-Real-IP")
   else:
     ip = request.remote_addr
+  print("Incrementing counter :3")
+  print(f"this is whats getting put in: {request.headers.get("X-Real-IP")} {ip}")
   database_handler.insertButtonLog(counter, request.headers.get("User-Agent"), ip) # Gotta find out if im even allowed to do this
   return redirect('/')
 
