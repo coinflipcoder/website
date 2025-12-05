@@ -62,7 +62,11 @@ def blogPage():
 def clicked():
   global counter
   counter += 1
-  database_handler.insertButtonLog(counter, request.headers.get("User-Agent"), request.remote_addr) # Gotta find out if im even allowed to do this
+  if request.headers.get("X-Real-IP") != None: 
+    ip = request.headers.get("X-Real-IP")
+  else:
+    ip = request.remote_addr
+  database_handler.insertButtonLog(counter, request.headers.get("User-Agent"), ip) # Gotta find out if im even allowed to do this
   return redirect('/')
 
 @app.route('/reroll', methods=['POST'])
