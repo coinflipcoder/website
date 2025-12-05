@@ -6,11 +6,11 @@
 
 <body>
     {% include 'components/theme_inputs.html' %}
-    
+
     <div class="main">
         {% include 'components/navbar.html' %}
         <div class="content">
-            <h1>Obligatory projects page</h1>
+            <h2 class="headline">Obligatory projects page</h2>
             <p>
                 Here are some of the things I have worked on.
             </p>
@@ -27,15 +27,20 @@
 
             <div class="projectlinks">
                 {% for link in project['links'] %}
-                    <p>[</p>
-                    <a href="{{ link['url'] }}">{{ link['name'] }}</a>
-                    <p>]</p>
+                <p>[</p>
+                <a href="{{ link['url'] }}">{{ link['name'] }}</a>
+                <p>]</p>
                 {% endfor %}
             </div>
- 
+
             {% endfor %}
 
             <div class="flexgrow"></div>
+
+            <div class="itsallminecraft">
+                <img src="/assets/images/itsallminecraft.png" alt="Wait, its all Minecraft?!" draggable="false" />
+            </div>
+
             {% include 'components/footer.html' %}
 
         </div>

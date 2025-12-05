@@ -215,7 +215,10 @@ html, body {
   flex: 50%;
   flex-direction: column;
   display: inherit;
-  
+}
+
+.content > .headline {
+  margin-top: 20px;
 }
 
 .bottom {
@@ -328,4 +331,17 @@ html, body {
 .projectlinks > a:hover {
   color: var(--primary-color);
   transition: color 0.2s;
+  cursor: pointer;
+}
+
+.itsallminecraft {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: inherit;
+  justify-content: center;
+}
+
+.itsallminecraft > img {
+  border-radius: 6px;
+  display: block;
 }
