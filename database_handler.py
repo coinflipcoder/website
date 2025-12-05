@@ -2,7 +2,7 @@ from sqlite3 import connect
 from uuid import uuid4
 from os import getenv
 
-DATABASE_FILE = getenv("DATABASE_PATH", "/database.db")
+DATABASE_FILE = getenv("DATABASE_PATH", "./database.db")
 
 buttonLogTable = '''CREATE TABLE IF NOT EXISTS button_log (
         uuid TEXT PRIMARY KEY,

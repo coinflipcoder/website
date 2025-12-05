@@ -126,7 +126,7 @@ body, code, pre {
 html, body {
   background: var(--ctp-base);
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -161,7 +161,7 @@ html, body {
   z-index: 1; /* needed to overlay content with divider gradient */
   position: relative; /* needed to overlay content with divider gradient */
   display: flex; /* needed for nav / content / rightbar */
-  height: inherit;
+  min-height: inherit;
 }
 
 .nav {
