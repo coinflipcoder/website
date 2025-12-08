@@ -2,6 +2,7 @@ import os
 import subprocess
 import argparse
 import jinja_filters
+import html
 
 # File types in which we want to search for used characters
 SCAN_EXTENSIONS = {".html"}
@@ -19,6 +20,7 @@ def extract_used_characters(root_dir):
         try:
           with open(file_path, "r", encoding="utf-8") as f:
             text = f.read()
+            text = html.unescape(text)
             for c in text:
               # Ignore control characters
               if ord(c) >= 32:
