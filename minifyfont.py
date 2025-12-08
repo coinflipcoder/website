@@ -84,7 +84,7 @@ def main():
 
   print("[*] Subsetting fonts...")
   for filename in os.listdir(args.fonts_dir):
-    if filename.lower().endswith(".woff2") and not filename.lower.endswith(".subset.woff2"):
+    if filename.lower().endswith(".woff2") and not filename.lower().endswith(".subset.woff2"):
       font_path = os.path.join(args.fonts_dir, filename)
 
       out_path = os.path.join(
