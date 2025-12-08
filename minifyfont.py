@@ -3,6 +3,7 @@ import subprocess
 import argparse
 import jinja_filters
 import html
+import string
 
 # File types in which we want to search for used characters
 SCAN_EXTENSIONS = {".html"}
@@ -35,6 +36,29 @@ def write_chars_file(chars, output_file):
   with open(output_file, "w", encoding="utf-8") as f:
     f.write(chars)
   print(f"[OK] Saved used character list to {output_file}")
+
+
+def get_all_used_characters(site_root_dir):
+  """
+  Combines:
+  - Literal characters from site files
+  - Selected Nerd Font icons
+  - Always includes 0-9, a-z, A-Z
+  """
+  chars = set()
+
+  # Always include alphanumerics
+  chars.update(string.ascii_lowercase)
+  chars.update(string.ascii_uppercase)
+  chars.update(string.digits)
+
+  # Add characters found in site
+  chars.update(extract_used_characters(site_root_dir))
+
+  # Add Python mapping icons
+  chars.update(jinja_filters.LANGUAGE_MAPPING.values())
+
+  return "".join(sorted(chars))
 
 
 def subset_font(font_path, chars_file, output_path):
@@ -74,15 +98,10 @@ def main():
   os.makedirs(args.output_dir, exist_ok=True)
 
   print("[*] Extracting characters used in site...")
-  chars = extract_used_characters(args.site_dir)
-
-  # Add the icons used in the jinja language filter
-  extra_glyphs = "".join(jinja_filters.LANGUAGE_MAPPING.values())
-
-  all_chars = "".join(sorted(set(chars + extra_glyphs)))
+  chars = get_all_used_characters(args.site_dir)
 
   chars_file = os.path.join(args.output_dir, "used_chars.txt")
-  write_chars_file(all_chars, chars_file)
+  write_chars_file(chars, chars_file)
 
   print("[*] Subsetting fonts...")
   for filename in os.listdir(args.fonts_dir):
