@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo "Minifying fonts..."
+python3 /app/minifyfont.py --site-dir /app/pages --fonts-dir /app/assets/fonts --output-dir /app/assets/fonts
+echo "Finished minifying fonts."
+
 cp -r /app/assets/* /static/
 
 # Environment variables

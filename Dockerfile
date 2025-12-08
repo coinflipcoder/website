@@ -11,5 +11,6 @@ COPY . .
 RUN mkdir -p /static
 
 RUN chmod +x /app/entrypoint.sh
+RUN chmod +x /app/minifyfont.py
 
 CMD ["/app/entrypoint.sh"]

@@ -90,28 +90,28 @@
 /* font */
 @font-face {
   font-family: 'MesloLGM Nerd Font';
-  src: url('/assets/fonts/MesloLGMNerdFont-Regular.woff2');
+  src: url('/assets/fonts/MesloLGMNerdFont-Regular.subset.woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'MesloLGM Nerd Font';
-  src: url('/assets/fonts/MesloLGMNerdFont-Bold.woff2');
+  src: url('/assets/fonts/MesloLGMNerdFont-Bold.subset.woff2');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'MesloLGM Nerd Font';
-  src: url('/assets/fonts/MesloLGMNerdFont-Italic.woff2');
+  src: url('/assets/fonts/MesloLGMNerdFont-Italic.subset.woff2');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'MesloLGM Nerd Font';
-  src: url('/assets/fonts/MesloLGMNerdFont-BoldItalic.woff2');
+  src: url('/assets/fonts/MesloLGMNerdFont-BoldItalic.subset.woff2');
   font-weight: bold;
   font-style: italic;
 }

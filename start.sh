@@ -1,5 +1,8 @@
 source ".venv/bin/activate"
 
+# Create minimized font
+python3 ./minifyfont.py --site-dir ./pages --fonts-dir ./assets/fonts --output-dir ./assets/fonts
+
 # development inotify
 # gunicorn app:app --workers 1 --threads 1 --reload --reload-engine="inotify" $(find ./pages ./assets -type f -printf '--reload-extra-file %p ')
 
