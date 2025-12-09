@@ -1,35 +1,17 @@
 import os
 import subprocess
 import argparse
-import jinja_filters
-import html
 import string
 
-# File types in which we want to search for used characters
-SCAN_EXTENSIONS = {".html"}
 
-def extract_used_characters(root_dir):
-  """
-  Walk through project files in root_dir and extract all literal characters used.
-  """
-  chars = set()
+USED_NERD_ICONS = [
+  '\ue73c', '\ue736', '\ue749', '\ue738', '\ue83e', # Projects icons
+  '\uf465' # Quote source icon
+]
 
-  for subdir, _, files in os.walk(root_dir):
-    for filename in files:
-      if os.path.splitext(filename)[1].lower() in SCAN_EXTENSIONS:
-        file_path = os.path.join(subdir, filename)
-        try:
-          with open(file_path, "r", encoding="utf-8") as f:
-            text = f.read()
-            text = html.unescape(text)
-            for c in text:
-              # Ignore control characters
-              if ord(c) >= 32:
-                chars.add(c)
-        except Exception as e:
-          print(f"Could not read {file_path}: {e}")
-
-  return "".join(sorted(chars))
+USED_EXTRA_ICONS = [
+  '─', '└', '├'
+]
 
 
 def write_chars_file(chars, output_file):
@@ -38,25 +20,23 @@ def write_chars_file(chars, output_file):
   print(f"[OK] Saved used character list to {output_file}")
 
 
-def get_all_used_characters(site_root_dir):
+def get_all_used_characters():
   """
   Combines:
-  - Literal characters from site files
+  - String letters, digits and punctuation
   - Selected Nerd Font icons
-  - Always includes 0-9, a-z, A-Z
   """
   chars = set()
 
   # Always include alphanumerics
-  chars.update(string.ascii_lowercase)
-  chars.update(string.ascii_uppercase)
+  chars.update(string.ascii_letters)
+  chars.update(string.punctuation)
+  chars.update(string.whitespace)
   chars.update(string.digits)
 
-  # Add characters found in site
-  chars.update(extract_used_characters(site_root_dir))
-
-  # Add Python mapping icons
-  chars.update(jinja_filters.LANGUAGE_MAPPING.values())
+  # Add extra icons
+  chars.update(USED_NERD_ICONS)
+  chars.update(USED_EXTRA_ICONS)
 
   return "".join(sorted(chars))
 
@@ -71,15 +51,16 @@ def subset_font(font_path, chars_file, output_path):
     f"--output-file={output_path}",
     f"--text-file={chars_file}",
     "--flavor=woff2",
-    "--layout-features='*'",
-    "--glyph-names",
-    "--symbol-cmap",
-    "--legacy-cmap",
+    "--layout-features=''",
+    "--no-glyph-names",
+    "--no-symbol-cmap",
+    "--no-legacy-cmap",
     "--notdef-glyph",
     "--notdef-outline",
     "--no-recalc-bounds",
     "--no-hinting",
-    "--drop-tables=FFTM"
+    "--desubroutinize",
+    "--drop-tables=FFTM,STAT,DSIG,PfEd"
   ]
 
   print(f"[RUNNING] {' '.join(cmd)}")
@@ -89,28 +70,27 @@ def subset_font(font_path, chars_file, output_path):
 
 def main():
   parser = argparse.ArgumentParser(description="Subset Nerd Font .woff2 files for deployment")
-  parser.add_argument("--site-dir", required=True, help="Directory containing source files")
-  parser.add_argument("--fonts-dir", required=True, help="Directory containing .woff2 fonts")
+  parser.add_argument("--fonts-dir", required=True, help="Directory containing .ttf fonts")
   parser.add_argument("--output-dir", required=True, help="Directory to write subset fonts")
 
   args = parser.parse_args()
 
   os.makedirs(args.output_dir, exist_ok=True)
 
-  print("[*] Extracting characters used in site...")
-  chars = get_all_used_characters(args.site_dir)
+  print("[*] Creating characters file...")
+  chars = get_all_used_characters()
 
   chars_file = os.path.join(args.output_dir, "used_chars.txt")
   write_chars_file(chars, chars_file)
 
   print("[*] Subsetting fonts...")
   for filename in os.listdir(args.fonts_dir):
-    if filename.lower().endswith(".woff2") and not filename.lower().endswith(".subset.woff2"):
+    if filename.lower().endswith(".ttf"):
       font_path = os.path.join(args.fonts_dir, filename)
 
       out_path = os.path.join(
         args.output_dir,
-        os.path.splitext(filename)[0] + ".subset.woff2"
+        os.path.splitext(filename)[0] + ".woff2"
       )
 
       subset_font(font_path, chars_file, out_path)

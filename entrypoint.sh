@@ -1,9 +1,7 @@
 #!/bin/sh
 
-echo "Minifying fonts..."
 # -u stops python from buffering prints until the script is done
-python3 -u /app/minifyfont.py --site-dir /app/pages --fonts-dir /app/assets/fonts --output-dir /app/assets/fonts
-echo "Finished minifying fonts."
+python3 -u /app/minifyfont.py --fonts-dir /app/assets/fonts --output-dir /app/assets/fonts
 
 cp -r /app/assets/* /static/
 
