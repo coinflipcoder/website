@@ -57,6 +57,7 @@ def blogPage():
 @app.route('/increment', methods=['POST'])
 def clicked():
   real_ip = request.headers.get("X-Real-IP")
+  print(real_ip)
   if real_ip != None: 
     ip = real_ip
   else:
