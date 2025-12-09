@@ -11,9 +11,6 @@ app = Flask(__name__, template_folder="pages")
 # Create custom jinja filters
 create_filters(app)
 
-# Initialize Database
-database_handler.createTables()
-
 year = datetime.now().year
 
 with open('pages/content/friend_buttons.json', 'r') as file:
