@@ -11,12 +11,7 @@ app = Flask(__name__, template_folder="pages")
 # Create custom jinja filters
 create_filters(app)
 
-# Initialize Database
-database_handler.createTables()
-
-counter = database_handler.getButtonValue()
 year = datetime.now().year
-fact = requests.get(FACT_URL).json()
 
 with open('pages/content/friend_buttons.json', 'r') as file:
   friend_buttons = json.load(file)
@@ -34,13 +29,13 @@ with open('pages/content/projects.json', 'r') as file:
 
 @app.route("/")
 def mainPage():
-  global counter
   if ("curl" in request.headers.get("User-Agent").lower()):
     response = make_response(boykisser, 200)
     response.mimetype = "text/plain"
     return response
 
   counter = database_handler.getButtonValue()
+  fact = database_handler.getCurrentFact()
   return render_template("index.html", year=year, clicks=counter, fact=fact['text'], source=fact['permalink'], friend_buttons=friend_buttons, silly_buttons=silly_buttons)
 
 @app.route("/projects")
@@ -61,21 +56,19 @@ def blogPage():
 
 @app.route('/increment', methods=['POST'])
 def clicked():
-  global counter
-
-  real_ip = request.headers.get("X-Real-IP")
+  real_ip = request.headers.get("X-Forwarded-For")
+  print(real_ip)
   if real_ip != None: 
     ip = real_ip
   else:
     ip = request.remote_addr
   
-  counter = database_handler.increment(request.headers.get("User-Agent"), ip)
+  database_handler.increment(request.headers.get("User-Agent"), ip)
   return redirect('/')
 
 @app.route('/reroll', methods=['POST'])
 def rerollFact():
-  global fact
-  fact = requests.get(FACT_URL).json()
+  database_handler.rerollFact()
   return redirect('/')
 
 

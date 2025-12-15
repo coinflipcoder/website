@@ -1,9 +1,17 @@
 #!/bin/sh
 
+<<<<<<< HEAD
+=======
+# -u stops python from buffering prints until the script is done
+python3 -u /app/minifyfont.py --fonts-dir /app/assets/fonts --output-dir /app/assets/fonts
+
+cp -r /app/assets/* /static/
+
+>>>>>>> 6cceee3703fda44d892fbb8873169f92fd52b40f
 # Environment variables
 WORKERS="${GUNICORN_WORKERS:-1}"
 THREADS="${GUNICORN_THREADS:-8}"
 BIND="${GUNICORN_BIND:-0.0.0.0}"
 PORT="${GUNICORN_PORT:-8000}"
 
-exec gunicorn app:app --workers "$WORKERS" --threads "$THREADS" --bind "$BIND":"$PORT"
+exec gunicorn -c /app/gunicorn_config.py app:app --workers "$WORKERS" --threads "$THREADS" --bind "$BIND":"$PORT"
