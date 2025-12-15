@@ -7,9 +7,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-# Server static files through nginx proxy manager directly
-RUN mkdir -p /static
-
 RUN chmod +x /app/entrypoint.sh
 
 CMD ["/app/entrypoint.sh"]

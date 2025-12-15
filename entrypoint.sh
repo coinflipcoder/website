@@ -1,7 +1,5 @@
 #!/bin/sh
 
-cp -r /app/assets/* /static/
-
 # Environment variables
 WORKERS="${GUNICORN_WORKERS:-1}"
 THREADS="${GUNICORN_THREADS:-8}"
