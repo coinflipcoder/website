@@ -20,7 +20,7 @@ RUN chmod -R 540 /app
 RUN chmod 770 /app/assets/fonts
 
 # and needs to be able to execute the entrypoint ig
-RUN chmod 550 /app/entrypoint.sh
+#RUN chmod 550 /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh /app/minifyfont.py
 
