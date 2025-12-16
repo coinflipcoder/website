@@ -2,3 +2,8 @@
 __pycache/
 .venv/
 Dockerfile*
+start.sh
+.git
+.github
+.gitignore
+.dockerignore
