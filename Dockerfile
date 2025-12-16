@@ -24,6 +24,6 @@ RUN chmod 550 /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh /app/minifyfont.py
 
-USER appuser
+USER 985:985
 
 CMD ["/app/entrypoint.sh"]
