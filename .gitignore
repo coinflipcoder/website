@@ -2,3 +2,10 @@ __pycache__/
 .venv/
 
 database.db
+
+# Dont push generated font files
+assets/fonts/MesloLGMNerdFont-Regular.woff2
+assets/fonts/MesloLGMNerdFont-Bold.woff2
+assets/fonts/MesloLGMNerdFont-Italic.woff2
+assets/fonts/MesloLGMNerdFont-BoldItalic.woff2
+assets/fonts/used_chars.txt
