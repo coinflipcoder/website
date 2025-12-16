@@ -14,13 +14,13 @@ COPY . .
 RUN chown -R 985:985 /app
 
 # app only needs read access
-RUN chmod -R 440 /app
+RUN chmod -R 550 /app
 
 # except for the fonts dir, as the user needs to generate the minified fonts there
 RUN chmod 770 /app/assets/fonts
 
 # and needs to be able to execute the entrypoint ig
-RUN chmod 550 /app/entrypoint.sh
+#RUN chmod 550 /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh /app/minifyfont.py
 
