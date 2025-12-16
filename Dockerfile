@@ -25,6 +25,9 @@ RUN chmod 770 /app/assets/fonts
 # and the entrypoint / minify script, as those need to be executed
 RUN chmod +x /app/entrypoint.sh /app/minifyfont.py
 
+# to make the database function, the user needs to be able to write to its directory (also needs execute because its a directory)
+RUN chmod -R 770 /app/db
+
 USER 985:985
 
 CMD ["/app/entrypoint.sh"]
