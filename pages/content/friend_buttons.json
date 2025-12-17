@@ -35,9 +35,9 @@
     "image": "magmaus3.png"
   },
   {
-    "name": "restartb",
+    "name": "restart",
     "domain": "https://restartb.xyz",
-    "image": "restartb.png"
+    "image": "restart.png"
   },
   {
     "name": "tufo",
@@ -62,7 +62,7 @@
   {
     "name": "paddy",
     "domain": "https://paddy.li",
-    "image": "paddyk45.png"
+    "image": "paddy.gif"
   },
   {
     "name": "cbax",
