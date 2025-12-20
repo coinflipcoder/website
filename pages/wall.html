@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+{% include 'components/head.html' %}
+
+<body>
+  {% include 'components/theme_inputs.html' %}
+
+  <div class="main">
+    {% include 'components/navbar.html' %}
+    <div class="content">
+      <h2 class="headline">Autograph Wall</h2>
+      <p>
+        Leave a silly message on my silly site :3
+      </p>
+      <p class="subtext">
+        Please do not abuse this, else ill have to implement annoying restrictions.
+      </p>
+
+      <form class="autographform" action="/wall" method="post">
+        <input id="name" name="name" type="text" placeholder="Sign Here">
+        <input id="message" name="message" type="text" placeholder="Message...">
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="autographgrid">
+        {% for row in rows %}
+        <div class="autograph">
+          <div class="message">
+            <p>"</p>
+            <p id="message"> {{ row[1] | escape }} </p>
+            <p>"</p>
+          </div>
+          <p id="name"> ~ {{ row[0] | escape }} </p>
+        </div>
+        {% endfor %}
+      </div>
+
+
+      <div class="flexgrow"></div>
+      {% include 'components/footer.html' %}
+    </div>
+    <div class="rightbar"></div>
+  </div>
+</body>
+
+</html>

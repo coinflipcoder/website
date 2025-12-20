@@ -50,6 +50,11 @@ def aboutPage():
 def blogPage():
   return render_template("blog.html", year=year)
 
+@app.route("/wall")
+def wallPage():
+  rows = database_handler.getAutographs()
+  return render_template("wall.html", year=year, rows=rows)
+
 #
 # Functions
 #
@@ -57,11 +62,8 @@ def blogPage():
 @app.route('/increment', methods=['POST'])
 def clicked():
   real_ip = request.headers.get("X-Forwarded-For")
-  print(real_ip)
-  if real_ip != None: 
-    ip = real_ip
-  else:
-    ip = request.remote_addr
+  if real_ip != None: ip = real_ip
+  else: ip = request.remote_addr
   
   database_handler.increment(request.headers.get("User-Agent"), ip)
   return redirect('/')
@@ -70,6 +72,20 @@ def clicked():
 def rerollFact():
   database_handler.rerollFact()
   return redirect('/')
+
+@app.route("/wall", methods=['POST'])
+def signWall():
+  name = request.form.get('name').strip()
+  message = request.form.get('message').strip()
+
+  if not message or not name: return redirect('/wall')
+
+  real_ip = request.headers.get("X-Forwarded-For")
+  if real_ip != None: ip = real_ip
+  else: ip = request.remote_addr
+
+  database_handler.addAutograph(name, message, request.headers.get("User-Agent"), ip)
+  return redirect('/wall')
 
 
 #
@@ -89,21 +105,25 @@ def stylesheet():
 def robots():
   return send_file("assets/robots.txt")
 
+@app.route("/fabi.gif")
+def myButton():
+  return send_file("assets/88x31s/fabi.gif")
+
 @app.route("/assets/gpg_key.asc")
 def getGPGKey():
   return send_file("assets/gpg_key.asc")
 
 @app.route("/assets/images/<image>")
 def getImage(image):
-  return send_from_directory("./assets/images", image)
+  return send_from_directory("assets/images", image)
 
 @app.route("/assets/fonts/<font>")
 def getFont(font):
-  return send_from_directory("./assets/fonts", font)
+  return send_from_directory("assets/fonts", font)
 
 @app.route('/assets/88x31s/<image>')
 def getButton(image):
-  return send_from_directory('./assets/88x31s', image)
+  return send_from_directory('assets/88x31s', image)
 
 
 

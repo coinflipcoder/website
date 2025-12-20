@@ -253,6 +253,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
   transition: box-shadow 0.2s;
+  font-family: 'MesloLGM Nerd Font';
 }
 
 .thebutton > form > button:hover {
@@ -389,4 +390,80 @@ body {
   color: var(--primary-color);
   transition: color 0.2s;
   cursor: pointer;
+}
+
+.subtext {
+  color: var(--subtext-color);
+  font-size: small;
+}
+
+.autographform {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  gap: 10px;
+}
+
+.autographform > input[type="text"] {
+  background-color: var(--bg-color);
+  padding: 6px;
+  border-radius: 6px;
+  color: var(--text-color);
+  font-family: 'MesloLGM Nerd Font';
+  outline: none;
+  border: 2px solid var(--surface-color);
+}
+
+.autographform > #name {
+  width: 10vw;
+}
+
+.autographform > #message {
+  flex-grow: 1;
+}
+
+.autographform > button {
+  background: var(--surface-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  font-family: 'MesloLGM Nerd Font';
+}
+
+.autographform > button:hover {
+  box-shadow: 0 0 8px 2px var(--primary-color);
+  transition: box-shadow 0.2s;
+}
+
+.autographgrid {
+  margin-top: 10px;
+  text-align: center;
+  display: grid;
+  grid-gap: 10px; 
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.autograph > .message {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.autograph > .message > p {
+  color: var(--primary-color);
+  font-size: large;
+}
+
+.autograph > .message > #message {
+  color: var(--text-color);
+  font-size: medium;
+}
+
+.autograph > #name {
+  color: var(--subtext-color);
+  font-size: small;
 }

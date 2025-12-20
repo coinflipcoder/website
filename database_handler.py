@@ -24,6 +24,15 @@ factTable = '''CREATE TABLE IF NOT EXISTS fact (
     permalink TEXT NOT NULL
   );'''
 
+autographTable = '''CREATE TABLE IF NOT EXISTS autograph (
+    uuid TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    message TEXT NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    useragent TEXT,
+    ip TEXT
+  );'''
+
 buttonIncrement = 'UPDATE counter SET value = value + 1 RETURNING value'
 buttonValue = 'SELECT value FROM counter'
 buttonLogInsert = 'INSERT INTO button_log(uuid, value, useragent, ip) VALUES(?,?,?,?)'
@@ -35,6 +44,9 @@ setFact = '''
     text=excluded.text,
     permalink=excluded.permalink
 '''
+
+autographValues = 'SELECT name, message FROM autograph ORDER BY timestamp DESC'
+autographInsert = 'INSERT INTO autograph(uuid, name, message, useragent, ip) VALUES(?,?,?,?,?)'
 
 def createTables():
   with connect(DATABASE_FILE) as conn:
@@ -57,6 +69,9 @@ def createTables():
     if cursor.fetchone()[0] == 0:
       fact = requests.get(FACT_URL).json()
       cursor.execute(setFact, (fact['text'], fact['permalink']))
+
+    # Create the autograph table
+    cursor.execute(autographTable)
 
     conn.commit()
 
@@ -91,3 +106,16 @@ def rerollFact():
     fact = requests.get(FACT_URL).json()
     cursor.execute(setFact, (fact['text'], fact['permalink']))
     return fact
+
+def addAutograph(name, message, useragent, ip):
+  with connect(DATABASE_FILE) as conn:
+    cursor = conn.cursor()
+    cursor.execute(autographInsert, (str(uuid4()), name, message, useragent, ip))
+    conn.commit()
+
+def getAutographs():
+  with connect(DATABASE_FILE) as conn:
+    cursor = conn.cursor()
+    cursor.execute(autographValues)
+    rows = cursor.fetchall()
+    return rows
