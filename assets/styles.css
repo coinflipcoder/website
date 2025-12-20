@@ -443,7 +443,8 @@ body {
   margin-top: 10px;
   text-align: center;
   display: grid;
-  grid-gap: 10px; 
+  row-gap: 30px;
+  column-gap: 10px;
   grid-template-columns: repeat(3, 1fr);
 }
 
