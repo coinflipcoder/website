@@ -270,7 +270,7 @@ body, code, pre {
 
 /* just boring css stuff */
 body {
-  background: var(--ctp-mocha-base);
+  background: #000000;
   width: 100vw;
   min-height: 100vh;
   display: flex;
