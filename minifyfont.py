@@ -9,47 +9,31 @@ USED_NERD_ICONS = [
   '\uf465' # Quote source icon
 ]
 
-USED_EXTRA_ICONS = [
-  '─', '└', '├'
-]
+
+def unicode_list_to_unicodes_arg(chars):
+  return ",".join(f"U+{ord(c):04X}" for c in chars)
 
 
-def write_chars_file(chars, output_file):
-  with open(output_file, "w", encoding="utf-8") as f:
-    f.write(chars)
-  print(f"[OK] Saved used character list to {output_file}")
-
-
-def get_all_used_characters():
+def subset_font(font_path, output_path):
   """
-  Combines:
-  - String letters, digits and punctuation
-  - Selected Nerd Font icons
+  Use pyftsubset to generate a minimized .woff2 font containing only defined unicode ranges and symbols.
   """
-  chars = set()
 
-  # Always include alphanumerics
-  chars.update(string.ascii_letters)
-  chars.update(string.punctuation)
-  chars.update(string.whitespace)
-  chars.update(string.digits)
+  nerd_icons = unicode_list_to_unicodes_arg(USED_NERD_ICONS)
+  unicode_ranges = (
+    "U+0000-007F,"  # Basic Latin
+    "U+0080-00FF,"  # Latin-1 Supplement
+    "U+0100-017F,"  # Latin Extended-A
+    "U+2500-257F,"  # Box Drawing
+  )
+  # Cheat sheet: https://htmlescape.net/unicode_charts.html
 
-  # Add extra icons
-  chars.update(USED_NERD_ICONS)
-  chars.update(USED_EXTRA_ICONS)
+  unicodes_arg = "--unicodes=" + unicode_ranges + nerd_icons
 
-  return "".join(sorted(chars))
-
-
-def subset_font(font_path, chars_file, output_path):
-  """
-  Use pyftsubset to generate a minimized .woff2 font containing only used chars.
-  """
   cmd = [
     "pyftsubset",
     font_path,
     f"--output-file={output_path}",
-    f"--text-file={chars_file}",
     "--flavor=woff2",
     "--layout-features=''",
     "--no-glyph-names",
@@ -60,7 +44,8 @@ def subset_font(font_path, chars_file, output_path):
     "--no-recalc-bounds",
     "--no-hinting",
     "--desubroutinize",
-    "--drop-tables=FFTM,STAT,DSIG,PfEd"
+    "--drop-tables=FFTM,STAT,DSIG,PfEd",
+    unicodes_arg
   ]
 
   print(f"[RUNNING] {' '.join(cmd)}")
@@ -77,12 +62,6 @@ def main():
 
   os.makedirs(args.output_dir, exist_ok=True)
 
-  print("[*] Creating characters file...")
-  chars = get_all_used_characters()
-
-  chars_file = os.path.join(args.output_dir, "used_chars.txt")
-  write_chars_file(chars, chars_file)
-
   print("[*] Subsetting fonts...")
   for filename in os.listdir(args.fonts_dir):
     if filename.lower().endswith(".ttf"):
@@ -93,7 +72,7 @@ def main():
         os.path.splitext(filename)[0] + ".woff2"
       )
 
-      subset_font(font_path, chars_file, out_path)
+      subset_font(font_path, out_path)
 
   print("Done!\n")
 
