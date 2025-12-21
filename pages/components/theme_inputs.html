@@ -1,21 +1,43 @@
-<input type="radio" class="theme-switch" name="theme-switch" id="theme-amoled" />
-<input type="radio" class="theme-switch" name="theme-switch" id="theme-catppuccin-latte" />
-<input type="radio" class="theme-switch" name="theme-switch" id="theme-catppuccin-frappe" />
-<input type="radio" class="theme-switch" name="theme-switch" id="theme-catppuccin-macchiato" />
-<input type="radio" class="theme-switch" name="theme-switch" id="theme-catppuccin-mocha" checked />
-<input type="radio" class="theme-switch" name="theme-switch" id="theme-puke" />
+<!-- Theme radio buttons -->
+<input type="radio" class="theme-switch" name="theme-switch" id="theme-catppuccin-latte"
+  {% if theme == 'catppuccin-latte' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="theme-switch" id="theme-catppuccin-frappe"
+  {% if theme == 'catppuccin-frappe' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="theme-switch" id="theme-catppuccin-macchiato"
+  {% if theme == 'catppuccin-macchiato' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="theme-switch" id="theme-catppuccin-mocha"
+  {% if theme == 'catppuccin-mocha' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="theme-switch" id="theme-amoled"
+  {% if theme == 'amoled' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="theme-switch" id="theme-puke"
+  {% if theme == 'puke' %}checked{% endif %} />
 
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-rosewater" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-flamingo" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-pink" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-mauve" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-red" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-maroon" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-peach" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-yellow" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-green" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-teal" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-sky" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-sapphire" />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-blue" checked />
-<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-lavender" />
+<!-- Accent radio buttons -->
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-rosewater"
+  {% if accent == 'rosewater' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-flamingo"
+  {% if accent == 'flamingo' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-pink"
+  {% if accent == 'pink' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-mauve"
+  {% if accent == 'mauve' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-red"
+  {% if accent == 'red' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-maroon"
+  {% if accent == 'maroon' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-peach"
+  {% if accent == 'peach' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-yellow"
+  {% if accent == 'yellow' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-green"
+  {% if accent == 'green' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-teal"
+  {% if accent == 'teal' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-sky"
+  {% if accent == 'sky' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-sapphire"
+  {% if accent == 'sapphire' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-blue"
+  {% if accent == 'blue' %}checked{% endif %} />
+<input type="radio" class="theme-switch" name="accent-switch" id="accent-catppuccin-lavender"
+  {% if accent == 'lavender' %}checked{% endif %} />

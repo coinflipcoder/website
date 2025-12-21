@@ -268,6 +268,16 @@ body, code, pre {
 
 
 
+/* why is this not default??? */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* needed to make padding be inside the flex size */
+  cursor: default;
+}
+
+
+
 /* just boring css stuff */
 body {
   background: #000000;
@@ -275,14 +285,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-/* why is this not default??? */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* needed to make padding be inside the flex size */
-  cursor: default;
 }
 
 .banner > img {

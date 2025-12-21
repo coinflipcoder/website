@@ -3,7 +3,7 @@ from datetime import datetime
 import requests
 import database_handler
 import json
-from consts import FACT_URL
+from consts import FACT_URL, DEFAULT_ACCENT, DEFAULT_THEME, VALID_ACCENTS, VALID_THEMES
 from jinja_filters import create_filters
 
 app = Flask(__name__, template_folder="pages")
@@ -36,24 +36,36 @@ def mainPage():
 
   counter = database_handler.getButtonValue()
   fact = database_handler.getCurrentFact()
-  return render_template("index.html", year=year, clicks=counter, fact=fact['text'], source=fact['permalink'], friend_buttons=friend_buttons, silly_buttons=silly_buttons)
+
+  (theme, accent) = getTheme(request)
+
+  return render_template("index.html", year=year, clicks=counter, fact=fact['text'], source=fact['permalink'], friend_buttons=friend_buttons, silly_buttons=silly_buttons, theme=theme, accent=accent)
 
 @app.route("/projects")
 def projectsPage():
-  return render_template("projects.html", year=year, projects=projects)
+  (theme, accent) = getTheme(request)
+
+  return render_template("projects.html", year=year, projects=projects, theme=theme, accent=accent)
 
 @app.route("/about")
 def aboutPage():
-  return render_template("about.html", year=year)
+  (theme, accent) = getTheme(request)
+
+  return render_template("about.html", year=year, theme=theme, accent=accent)
 
 @app.route("/blog")
 def blogPage():
-  return render_template("blog.html", year=year)
+  (theme, accent) = getTheme(request)
+
+  return render_template("blog.html", year=year, theme=theme, accent=accent)
 
 @app.route("/wall")
 def wallPage():
   rows = database_handler.getAutographs()
-  return render_template("wall.html", year=year, rows=rows)
+
+  (theme, accent) = getTheme(request)
+
+  return render_template("wall.html", year=year, rows=rows, theme=theme, accent=accent)
 
 #
 # Functions
@@ -125,6 +137,15 @@ def getFont(font):
 def getButton(image):
   return send_from_directory('assets/88x31s', image)
 
+
+def getTheme(request):
+  theme = request.args.get("theme", DEFAULT_THEME)
+  accent = request.args.get("accent", DEFAULT_ACCENT)
+
+  if theme not in VALID_THEMES: theme = DEFAULT_THEME
+  if accent not in VALID_ACCENTS: accent = DEFAULT_ACCENT
+
+  return (theme, accent)
 
 
 boykisser = \
