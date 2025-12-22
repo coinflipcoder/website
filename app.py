@@ -142,6 +142,7 @@ def getTheme(request):
   theme = request.args.get("theme", DEFAULT_THEME)
   accent = request.args.get("accent", DEFAULT_ACCENT)
 
+  if theme == "pretty": theme = "puke"  # We do a little trolling :3
   if theme not in VALID_THEMES: theme = DEFAULT_THEME
   if accent not in VALID_ACCENTS: accent = DEFAULT_ACCENT
 
