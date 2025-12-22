@@ -5,4 +5,4 @@ def on_starting(server):
 
   import consts
   from datetime import datetime
-  consts.DEPLOY_TIMESTAMP = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+  consts.DEPLOY_TIMESTAMP = datetime.now().strftime('%d.%m.%Y %H:%M:%S')
