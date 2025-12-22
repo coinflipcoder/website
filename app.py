@@ -3,7 +3,7 @@ from datetime import datetime
 import requests
 import database_handler
 import json
-from consts import FACT_URL, DEFAULT_ACCENT, DEFAULT_THEME, VALID_ACCENTS, VALID_THEMES
+from consts import FACT_URL, DEFAULT_ACCENT, DEFAULT_THEME, VALID_ACCENTS, VALID_THEMES, DEPLOY_TIMESTAMP
 from jinja_filters import create_filters
 
 app = Flask(__name__, template_folder="pages")
@@ -39,25 +39,42 @@ def mainPage():
 
   (theme, accent) = getTheme(request)
 
-  return render_template("index.html", year=year, clicks=counter, fact=fact['text'], source=fact['permalink'], friend_buttons=friend_buttons, silly_buttons=silly_buttons, theme=theme, accent=accent)
+  return render_template("index.html", 
+    year = year, clicks = counter, fact = fact['text'], source = fact['permalink'], 
+    friend_buttons = friend_buttons, silly_buttons = silly_buttons, 
+    theme = theme, accent = accent,
+    deployed = DEPLOY_TIMESTAMP
+  )
 
 @app.route("/projects")
 def projectsPage():
   (theme, accent) = getTheme(request)
 
-  return render_template("projects.html", year=year, projects=projects, theme=theme, accent=accent)
+  return render_template("projects.html", 
+    year = year, projects = projects, 
+    theme = theme, accent = accent,
+    deployed = DEPLOY_TIMESTAMP
+  )
 
 @app.route("/about")
 def aboutPage():
   (theme, accent) = getTheme(request)
 
-  return render_template("about.html", year=year, theme=theme, accent=accent)
+  return render_template("about.html", 
+    year = year, 
+    theme = theme, accent = accent,
+    deployed = DEPLOY_TIMESTAMP
+  )
 
 @app.route("/blog")
 def blogPage():
   (theme, accent) = getTheme(request)
 
-  return render_template("blog.html", year=year, theme=theme, accent=accent)
+  return render_template("blog.html", 
+    year = year, 
+    theme = theme, accent = accent,
+    deployed = DEPLOY_TIMESTAMP
+  )
 
 @app.route("/wall")
 def wallPage():
@@ -65,7 +82,11 @@ def wallPage():
 
   (theme, accent) = getTheme(request)
 
-  return render_template("wall.html", year=year, rows=rows, theme=theme, accent=accent)
+  return render_template("wall.html", 
+    year=year, rows = rows, 
+    theme = theme, accent = accent,
+    deployed = DEPLOY_TIMESTAMP
+  )
 
 #
 # Functions
