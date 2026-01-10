@@ -1,0 +1,86 @@
+So youre one of those creatures, huh.
+You think even HTML is bloat?
+Thats fine, because youre in luck! I made this txt version of my webbed site, just for you :)
+
+
+
+Hello there :3
+I am Fabi, a young and naive programmer from Germany who will retreat to the backend upon spotting a css class.
+Its nice to meet you! On this page you will find a variety of things I have wasted my time on.
+
+
+
+
+~~ /projects ~~
+Obligatory projects page
+Here are some of the things I have worked on.
+
+~[ Website ]~
+This website is built using Flask and deployed via Gunicorn. It uses Jinja to serve dynamic HTML files. Look ma, no Javascript!
+ - Github > https://github.com/coinflipcoder/website
+
+~[ Velocity Plugin ]~
+A Minecraft Velocity plugin tailored to my network. It will not work on your server, but be my guest to do some tactical communism in my code.
+ - Github > https://github.com/coinflipcoder/CustomPlugin
+
+~[ No Join Leave Message ]~
+Quick and dirty Minecraft Fabric mod that disabled joining and leaving messages.
+ - Github > https://github.com/coinflipcoder/No-Join-Leave-Message
+ - Modrinth > https://modrinth.com/mod/no-join-leave-messages
+
+~[ Better Beacon Range ]~
+Minecraft Fabric mod that makes the beacon effect range configurable.
+ - Github > https://github.com/coinflipcoder/Better-Beacon-Range
+ - Modrinth > https://modrinth.com/mod/better-beacon-range-was-taken
+
+~[ Neon ]~
+A Minecraft Fabric hacked client that I made to play on LiveOverflow's server. A lot of this code is 'borrowed' from other clients as this was my learning project.
+ - Github > https://github.com/coinflipcoder/neon
+
+~[ Harder Dragon ]~
+Small Minecraft Paper plugin that makes the dragon fight incresingly more difficult.
+ - Github > https://github.com/coinflipcoder/Harder-Dragon
+ - Modrinth > https://modrinth.com/plugin/harder-dragon
+
+~[ Bad Discord Bot ]~
+A very bad and probably non functional Discord bot written in Python. The Framework I made is really nice :)
+ - Github > https://github.com/coinflipcoder/DiscordBot
+
+~[ Activecraft-Core ]~
+This Minecraft plugin was the project that got me into programming. It was a lot of fun to work on it and its other modules at the time. Sadly, it was abandoned a long time ago.
+ - Github > https://github.com/ActiveCraftPlugins/ActiveCraft-Core
+ - Spigot > https://www.spigotmc.org/resources/activecraft-core.95488
+ - Docs > https://cplaiz.github.io/ActiveCraft-Core
+
+
+
+
+~~ /about ~~
+Contact Me
+Feel free to reach out through any of the following platforms:
+
+~[ Fediverse ]~
+@coinflipcoder@chaos.social
+
+~[ Discord ]~
+@coinflipcoder
+
+~[ Matrix ]~
+@me:coinflipcoder.dev
+
+~[ Github ]~
+Coinflipcoder
+
+
+
+GPG Key
+
+This GPG key is used to sign commits on Github.
+ - Download > https://coinflipcoder.dev/assets/gpg_key.asc
+
+
+
+
+Web design is my passion. Copyleft 2025.
+
+paws at u <3

@@ -626,3 +626,19 @@ body {
   color: var(--subtext-color);
   font-size: small;
 }
+
+.txtblock {
+  margin-top: 20px;
+}
+
+.txtblock > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s;
+  text-shadow: var(--primary-color) 0 0 10px;
+}
+
+.txtblock > a:hover {
+  color: var(--primary-color) !important;
+  transition: color .2s;
+}

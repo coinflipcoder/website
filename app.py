@@ -1,10 +1,10 @@
 from flask import Flask, render_template, send_file, send_from_directory, request, make_response, redirect
 from datetime import datetime
 import requests
-import database_handler
+import scripts.database_handler as database_handler
 import json
-from consts import FACT_URL, DEFAULT_ACCENT, DEFAULT_THEME, VALID_ACCENTS, VALID_THEMES, DEPLOY_TIMESTAMP
-from jinja_filters import create_filters
+from scripts.consts import FACT_URL, DEFAULT_ACCENT, DEFAULT_THEME, VALID_ACCENTS, VALID_THEMES, DEPLOY_TIMESTAMP
+from scripts.jinja_filters import create_filters
 
 app = Flask(__name__, template_folder="pages")
 
@@ -21,6 +21,7 @@ with open('pages/content/silly_buttons.json', 'r') as file:
 
 with open('pages/content/projects.json', 'r') as file:
   projects = json.load(file)
+
 
 
 #
@@ -87,6 +88,12 @@ def wallPage():
     theme = theme, accent = accent,
     deployed = DEPLOY_TIMESTAMP
   )
+
+@app.route("/txt")
+def txtSite():
+  return send_file("pages/content/txtversion.txt")
+
+
 
 #
 # Functions
@@ -168,6 +175,7 @@ def getTheme(request):
   if accent not in VALID_ACCENTS: accent = DEFAULT_ACCENT
 
   return (theme, accent)
+
 
 
 boykisser = \

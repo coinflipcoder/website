@@ -2,7 +2,7 @@ from sqlite3 import connect
 from uuid import uuid4
 from os import getenv
 import requests
-from consts import FACT_URL
+from scripts.consts import FACT_URL
 
 DATABASE_FILE = getenv("DATABASE_PATH", "./database.db")
 
