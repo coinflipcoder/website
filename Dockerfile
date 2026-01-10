@@ -20,8 +20,8 @@ RUN chmod -R 770 /app
 RUN find /app -type f -print0 | xargs -0 chmod 440
 
 # and the entrypoint / minify script, as those need to be executed
-RUN chmod +x /app/entrypoint.sh /app/minifyfont.py
+RUN chmod +x /app/scripts/entrypoint.sh /app/scripts/minifyfont.py
 
 USER 985:985
 
-CMD ["/app/entrypoint.sh"]
+CMD ["/app/scripts/entrypoint.sh"]
