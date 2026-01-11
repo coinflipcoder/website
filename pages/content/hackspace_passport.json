@@ -1,0 +1,17 @@
+[
+  {
+    "name": "CCCDA",
+    "image": "cccda.svg",
+    "link": "https://chaos-darmstadt.de"
+  },
+  {
+    "name": "CCC-FFM",
+    "image": "ccc-ffm.png",
+    "link": "https://ccc-ffm.de/"
+  },
+  {
+    "name": "Entropia",
+    "image": "entropia.svg",
+    "link": "https://entropia.de/"
+  }
+]

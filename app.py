@@ -22,6 +22,11 @@ with open('pages/content/silly_buttons.json', 'r') as file:
 with open('pages/content/projects.json', 'r') as file:
   projects = json.load(file)
 
+with open('pages/content/hackspace_passport.json', 'r') as file:
+  hackspaces = json.load(file)
+
+with open('pages/content/events.json', 'r') as file:
+  events = json.load(file)
 
 
 #
@@ -55,6 +60,16 @@ def projectsPage():
     year = year, projects = projects, 
     theme = theme, accent = accent,
     deployed = DEPLOY_TIMESTAMP
+  )
+
+@app.route("/chaos")
+def chaosPage():
+  (theme, accent) = getTheme(request)
+
+  return render_template("chaos.html", 
+    hackspaces = hackspaces, events = events,
+    theme = theme, accent = accent,
+    deployed = DEPLOY_TIMESTAMP, year = year
   )
 
 @app.route("/about")
@@ -164,6 +179,10 @@ def getFont(font):
 @app.route('/assets/88x31s/<image>')
 def getButton(image):
   return send_from_directory('assets/88x31s', image)
+
+@app.route('/assets/hackspaces/<image>')
+def getHackspaceImage(image):
+  return send_from_directory('assets/hackspaces', image)
 
 
 def getTheme(request):

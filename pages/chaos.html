@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+{% include 'components/head.html' %}
+
+<body>
+  {% include 'components/theme_inputs.html' %}
+
+  <div class="main">
+    {% include 'components/navbar.html' %}
+    <div class="content">
+      <h2 class="headline">My Hackspace Passport</h2>
+
+      <div class="hackspace-passport">
+        {% for space in hackspaces %}
+          <a href="{{ space['link'] }}", target="_blank">
+            <img src="/assets/hackspaces/{{ space['image'] }}" alt="{{ space['name'] }}" />
+          </a>
+        {% endfor %}
+      </div>
+
+      <h2 class="headline">My Event Calendar</h2>
+      <div class="events">
+        {% for event in events %}
+          <div>
+            <p>></p>
+            <a class="link" href="{{ event['link'] }}", target="_blank">{{ event['name'] }}</a>
+            <p class="events-time">({{ event['start'] }} - {{ event['end'] }})</p>
+          </div>
+        {% endfor %} 
+      </div>
+
+    <div class="flexgrow"></div>
+    {% include 'components/footer.html' %}
+  </div>
+  {% include 'components/themebar.html' %}
+  </div>
+</body>
+
+</html>
