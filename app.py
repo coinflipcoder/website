@@ -45,7 +45,7 @@ def mainPage():
 
   (theme, accent) = getTheme(request)
 
-  return render_template("index.html", 
+  return render_template("home.html", 
     year = year, clicks = counter, fact = fact['text'], source = fact['permalink'], 
     friend_buttons = friend_buttons, silly_buttons = silly_buttons, 
     theme = theme, accent = accent,
