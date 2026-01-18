@@ -13,5 +13,10 @@
     "name": "Entropia",
     "image": "entropia.svg",
     "link": "https://entropia.de/"
+  },
+  {
+    "name": "Haxko",
+    "image": "haxko.svg",
+    "link": "https://haxko.space/"
   }
 ]
