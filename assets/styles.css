@@ -286,6 +286,10 @@ body, code, pre {
   color: inherit;
 }
 
+.rounded {
+  border-radius: 6px;
+}
+
 
 
 /* why is this not default??? */
@@ -679,4 +683,11 @@ body {
 
 .events-time {
   color: var(--subtext-color);
+}
+
+.mapembed {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  border: none;
 }

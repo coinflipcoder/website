@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+{% include 'components/head.html' %}
+
+<body>
+  {% include 'components/theme_inputs.html' %}
+
+  <div class="main">
+    {% include 'components/navbar.html' %}
+    <div class="content">
+      <h2 class="headline">My Travel Map</h2>
+      <p class="subtext">Is this map 100% accurate? No. </p>
+      <iframe class="mapembed rounded" src="https://viaduct.world/share/m/J8bw75e6Rc_So4hW" scrolling="no"></iframe>
+
+    <div class="flexgrow"></div>
+    {% include 'components/footer.html' %}
+  </div>
+  {% include 'components/themebar.html' %}
+  </div>
+</body>
+
+</html>

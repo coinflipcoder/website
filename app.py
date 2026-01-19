@@ -104,6 +104,16 @@ def wallPage():
     deployed = DEPLOY_TIMESTAMP
   )
 
+@app.route("/travel")
+def travelPage():
+  (theme, accent) = getTheme(request)
+
+  return render_template("travel.html", 
+    year = year, 
+    theme = theme, accent = accent,
+    deployed = DEPLOY_TIMESTAMP
+  )
+
 @app.route("/txt")
 def txtSite():
   return send_file("pages/content/txtversion.txt")
