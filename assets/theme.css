@@ -111,6 +111,29 @@
   --surface-color: #313244;  /* Surface0 */
 }
 
+/* My Amoled theme */
+#theme-amoled:checked ~ .main {
+  --rosewater: #f5e0dc;
+  --flamingo: #f2cdcd;
+  --pink: #f5c2e7;
+  --mauve: #cba6f7;
+  --red: #f38ba8;
+  --maroon: #eba0ac;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --sky: #89dceb;
+  --sapphire: #74c7ec;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
+
+  --text-color: #ffffff;
+  --subtext-color: #9a9a9a;
+  --bg-color: #000000;
+  --surface-color: #202020;
+}
+
 #accent-catppuccin-rosewater:checked ~ .main {
   --primary-color: var(--rosewater);
 }
@@ -165,15 +188,6 @@
 
 #accent-catppuccin-lavender:checked ~ .main {
   --primary-color: var(--lavender);
-}
-
-
-#theme-amoled:checked ~ .main {
-  --text-color: #ffffff;
-  --subtext-color: #9a9a9a;
-  --bg-color: #000000;
-  --surface-color: #202020;
-  --primary-color: #89b4fa;
 }
 
 #theme-puke:checked ~ .main {
