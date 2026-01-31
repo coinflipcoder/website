@@ -222,15 +222,6 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-.switch-text {
-  color: var(--text-color);
-}
-
-.switch-label {
-  color: var(--text-color);
-  cursor: pointer;
-}
-
 /* stolen from https://alexandersandberg.github.io/theme-switcher/unlimited.html */
 
 
@@ -290,6 +281,128 @@ body, code, pre {
   border-radius: 6px;
 }
 
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.gap-5 {
+  gap: 5px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.button {
+  background: var(--surface-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  font-family: 'MesloLGM Nerd Font';
+}
+
+.button:hover {
+  box-shadow: 0 0 8px 2px var(--primary-color);
+  transition: box-shadow 0.2s;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.subtext {
+  color: var(--subtext-color);
+}
+
+.subbertext {
+  color: var(--surface-color);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pixel {
+  image-rendering: pixelated;
+}
+
+.block {
+  display: block;
+}
+
+.shadow:hover {
+  box-shadow: 0 0 8px 2px var(--primary-color);
+}
+
+.small {
+  font-size: small;
+}
+
+.larger {
+  font-size: larger;
+}
+
+.x-large {
+  font-size: x-large;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.hover:hover {
+  color: var(--primary-color);
+  transition: color 0.2s;
+}
 
 
 /* why is this not default??? */
@@ -380,135 +493,12 @@ body {
   display: inherit;
 }
 
-.content > .headline {
-  margin-top: 20px;
-}
-
 .bottom {
   text-align: center;
   color: var(--subtext-color);
   margin-bottom: 0.5%;
   margin-top: 1%;
   transition: color .2s;
-}
-
-.flexgrow {
-  flex: 1;
-}
-
-.paragraph {
-  margin-top: 3%;
-}
-
-.thebutton {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  margin-top: 5px;
-}
-
-.thebutton > form > button {
-  background: var(--surface-color);
-  color: var(--text-color);
-  border: none;
-  padding: 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: box-shadow 0.2s;
-  font-family: 'MesloLGM Nerd Font';
-}
-
-.thebutton > form > button:hover {
-  box-shadow: 0 0 8px 2px var(--primary-color);
-  transition: box-shadow 0.2s;
-}
-
-.linkicon {
-  cursor: pointer;
-  color: var(--subtext-color);
-  text-decoration: none;
-}
-
-.linkicon:hover {
-  color: var(--primary-color);
-  transition: color 0.2s;
-}
-
-.eightyeightxthirtythree_grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  image-rendering: pixelated;
-  gap: 5px;
-  margin-top: 10px
-}
-
-.eightyeightxthirtythree_button {
-  display: block;
-}
-
-.eightyeightxthirtythree_button:hover {
-  cursor: pointer;
-  box-shadow: 0 0 8px 2px var(--primary-color);
-}
-
-.projecttitle {
-  margin-top: 5%;
-  display: flex;
-  align-items: center;
-}
-
-.projecttitle > h2 {
-  margin-right: 25px;
-}
-
-.projecttitle > span {
-  font-size: x-large;
-  color: var(--subtext-color);
-  transition: color 0.2s;
-  margin-right: 15px;
-}
-
-.projecttitle > span:hover {
-  color: var(--primary-color);
-  transition: color 0.2s;
-}
-
-.projectlinks {
-  display: flex;
-  margin-top: 5px;
-}
-
-.projectlinks > p {
-  color: var(--surface-color);
-  font-weight: bold;
-}
-
-.projectlinks > a {
-  margin-left: 5px;
-  margin-right: 5px;
-  text-decoration: none;
-  color: var(--text-color);
-  transition: color 0.2s;
-}
-
-.projectlinks > a:hover {
-  color: var(--primary-color);
-  transition: color 0.2s;
-  cursor: pointer;
-}
-
-.itsallminecraft {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  display: inherit;
-  justify-content: center;
-}
-
-.itsallminecraft > img {
-  border-radius: 6px;
-  display: block;
 }
 
 .contact {
@@ -557,11 +547,6 @@ body {
   color: var(--primary-color);
   transition: color 0.2s;
   cursor: pointer;
-}
-
-.subtext {
-  color: var(--subtext-color);
-  font-size: small;
 }
 
 .autographform {

@@ -8,35 +8,35 @@
   <div class="main">
     {% include 'components/navbar.html' %}
     <div class="content">
-      <h2 class="headline">Obligatory projects page</h2>
+      <h2 class="mt-20">Obligatory projects page</h2>
       <p>
         Here are some of the things I have worked on.
       </p>
 
       {% for project in projects %}
-      <div class="projecttitle">
-        <h2>{{ project['title'] }}</h2>
+      <div class="mt-20 flex-row align-center">
+        <p class="mr-20 larger bold">{{ project['title'] }}</p>
         {% for language in project['languages'] %}
-        <span title="{{ language }}">{{ language | langicon | safe }}</span>
+        <span class="subtext x-large mr-10 hover" title="{{ language }}">{{ language | langicon | safe }}</span>
         {% endfor %}
       </div>
 
       <p> {{ project['description'] }} </p>
 
-      <div class="projectlinks">
+      <div class="flex-row mt-5">
         {% for link in project['links'] %}
-        <p>[</p>
-        <a href="{{ link['url'] }}">{{ link['name'] }}</a>
-        <p>]</p>
+        <p class="subbertext bold">[</p>
+        <a class="link mr-5 ml-5" href="{{ link['url'] }}">{{ link['name'] }}</a>
+        <p class="subbertext bold">]</p>
         {% endfor %}
       </div>
 
       {% endfor %}
 
-      <div class="flexgrow"></div>
+      <div class="flex-grow"></div>
 
-      <div class="itsallminecraft">
-        <img src="/assets/images/itsallminecraft.png" alt="Wait, its all Minecraft?!" draggable="false" />
+      <div class="flex-row justify-center mt-20">
+        <img class="rounded" src="/assets/images/itsallminecraft.png" alt="Wait, its all Minecraft?!" draggable="false" />
       </div>
 
       {% include 'components/footer.html' %}

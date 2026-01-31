@@ -8,7 +8,7 @@
   <div class="main">
     {% include 'components/navbar.html' %}
     <div class="content">
-      <h2 class="headline">My Hackspace Passport</h2>
+      <h2 class="mt-20">My Hackspace Passport</h2>
 
       <div class="hackspace-passport">
         {% for space in hackspaces %}
@@ -18,7 +18,7 @@
         {% endfor %}
       </div>
 
-      <h2 class="headline">My Event Calendar</h2>
+      <h2 class="mt-20">My Event Calendar</h2>
       <div class="events">
         {% for event in events %}
           <div>
@@ -29,7 +29,7 @@
         {% endfor %} 
       </div>
 
-    <div class="flexgrow"></div>
+    <div class="flex-grow"></div>
     {% include 'components/footer.html' %}
   </div>
   {% include 'components/themebar.html' %}

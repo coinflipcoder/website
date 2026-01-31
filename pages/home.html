@@ -25,40 +25,40 @@
         This website loads too slowly? HTML is bloat anyways? Check out the <a href="/txt">txt site</a>!
       </p>
 
-      <h2 class="paragraph">Useless fact</h2>
-      <div class="thebutton">
+      <h2 class="mt-20">Useless fact</h2>
+      <div class="flex-row align-center mt-5 gap-10">
         <form method="POST" action="/reroll">
-          <button>Reroll</button>
+          <button class="button">Reroll</button>
         </form>
-        <p>{{ fact }} <a class="linkicon" href="{{ source }}" target="_blank">&#xf465;</a> </p>
+        <p>{{ fact }} <a class="link subtext pointer" href="{{ source }}" target="_blank">&#xf465;</a> </p>
       </div>
 
-      <h2 class="paragraph">Big number go uppies</h2>
-      <div class="thebutton">
+      <h2 class="mt-20">Big number go uppies</h2>
+      <div class="flex-row align-center mt-5 gap-10">
         <form method="POST" action="/increment">
-          <button>The button</button>
+          <button class="button">The button</button>
         </form>
         <p>Clicks: {{clicks}}</p>
       </div>
 
-      <h2 class="paragraph">Silly Buttons</h2>
-      <div class="eightyeightxthirtythree_grid">
+      <h2 class="mt-20">Silly Buttons</h2>
+      <div class="flex-row flex-wrap pixel justify-center gap-5 mt-10">
         {% for friend in friend_buttons %}
         <a href="{{ friend['domain'] }}" target="_blank">
-          <img class="eightyeightxthirtythree_button" src="/assets/88x31s/{{ friend['image'] }}" width="88" height="31", alt="{{ friend['name'] }}" />
+          <img class="block pointer shadow" src="/assets/88x31s/{{ friend['image'] }}" width="88" height="31", alt="{{ friend['name'] }}" />
         </a>
         {% endfor %}
       </div>
 
-      <div class="eightyeightxthirtythree_grid">
+      <div class="flex-row flex-wrap pixel justify-center gap-5 mt-10">
         {% for button in silly_buttons %}
         <a href="{{ button['domain'] }}" target="_blank">
-          <img class="eightyeightxthirtythree_button" src="/assets/88x31s/{{ button['image'] }}" width="88" height="31", alt="{{ button['name'] }}" />
+          <img class="block pointer shadow" src="/assets/88x31s/{{ button['image'] }}" width="88" height="31", alt="{{ button['name'] }}" />
         </a>
         {% endfor %}
       </div>
 
-      <div class="flexgrow"></div>
+      <div class="flex-grow"></div>
       {% include 'components/footer.html' %}
     </div>
     {% include 'components/themebar.html' %}
