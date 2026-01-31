@@ -1,0 +1,363 @@
+/* welcome to my terribly unorganized and unoptimized css file */
+
+@import "theme.css";
+
+:root {
+  --divider-color: #89b4fa;
+}
+
+
+
+/* font */
+@font-face {
+  font-family: 'MesloLGM Nerd Font';
+  src: url('/assets/fonts/MesloLGMNerdFont-Regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MesloLGM Nerd Font';
+  src: url('/assets/fonts/MesloLGMNerdFont-Bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MesloLGM Nerd Font';
+  src: url('/assets/fonts/MesloLGMNerdFont-Italic.woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MesloLGM Nerd Font';
+  src: url('/assets/fonts/MesloLGMNerdFont-BoldItalic.woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+body,
+code,
+pre {
+  font-family: 'MeslolGM Nerd Font';
+}
+
+
+
+/* Generics */
+.link {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.link:hover {
+  color: var(--primary-color) !important;
+  transition: color .2s;
+}
+
+.link:visited {
+  color: inherit;
+}
+
+.rounded {
+  border-radius: 6px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.gap-5 {
+  gap: 5px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.button {
+  background: var(--surface-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  font-family: 'MesloLGM Nerd Font';
+}
+
+.button:hover {
+  box-shadow: 0 0 8px 2px var(--primary-color);
+  transition: box-shadow 0.2s;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.subtext {
+  color: var(--subtext-color);
+}
+
+.subbertext {
+  color: var(--surface-color);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pixel {
+  image-rendering: pixelated;
+}
+
+.block {
+  display: block;
+}
+
+.shadow:hover {
+  box-shadow: 0 0 8px 2px var(--primary-color);
+}
+
+.text-shadow {
+  text-shadow: var(--primary-color) 0 0 10px;
+}
+
+.small {
+  font-size: small;
+}
+
+.large {
+  font-size: large;
+}
+
+.larger {
+  font-size: larger;
+}
+
+.x-large {
+  font-size: x-large;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.hover:hover {
+  color: var(--primary-color);
+  transition: color 0.2s;
+}
+
+.input {
+  background-color: var(--bg-color);
+  padding: 6px;
+  border-radius: 6px;
+  color: var(--text-color);
+  font-family: 'MesloLGM Nerd Font';
+  outline: none;
+  border: 2px solid var(--surface-color);
+}
+
+.primary {
+  color: var(--primary-color)
+}
+
+
+/* why is this not default??? */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* needed to make padding be inside the flex size */
+  cursor: default;
+}
+
+
+
+/* just boring css stuff */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #000000;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner>img {
+  width: 100%;
+  display: block;
+}
+
+.divider {
+  background: var(--divider-color);
+  height: 1px;
+  width: 100%;
+  box-shadow: 0 0 25px 5px var(--divider-color);
+  z-index: 2;
+  /* needed to overlay content with divider gradient */
+  position: relative;
+  /* needed to overlay content with divider gradient */
+}
+
+.main {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: color .2s, background-color .2s;
+  padding-top: 10px;
+  z-index: 1;
+  /* needed to overlay content with divider gradient */
+  position: relative;
+  /* needed to overlay content with divider gradient */
+  display: flex;
+  /* needed for nav / content / rightbar */
+  flex: 1;
+  /* grow main content to full body height */
+}
+
+.nav, 
+.themes {
+  flex: 20%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.themes > div {
+  display: inherit;
+  flex-direction: inherit;
+  padding-bottom: 20px;
+}
+
+/* default: hide accent selector */
+.themes > .catppuccinaccent {
+  display: none;
+}
+
+/* show if any Catppuccin theme is checked */
+:is(#theme-catppuccin-latte,
+  #theme-catppuccin-frappe,
+  #theme-catppuccin-macchiato,
+  #theme-catppuccin-mocha):checked ~ .main .themes > .catppuccinaccent {
+  display: inherit;
+  flex-direction: inherit;
+  transition: color 0.2s;
+}
+
+.themes {
+  text-align: end;
+}
+
+.content {
+  flex: 60%;
+  flex-direction: column;
+  display: inherit;
+}
+
+.bottom {
+  text-align: center;
+  color: var(--subtext-color);
+  margin-bottom: 0.5%;
+  margin-top: 1%;
+  transition: color .2s;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+}
+
+.autograph-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 30px;
+  text-align: center;
+}
+
+.hackimg {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.mapembed {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

@@ -1,0 +1,218 @@
+#theme-catppuccin-latte:checked ~ .main {
+  --text-color: var(--ctp-mocha-text);
+  --subtext-color: var(--ctp-mocha-subtext0);
+  --bg-color: var(--ctp-mocha-base);
+  --surface-color: var(--ctp-mocha-surface0);
+}
+
+#theme-catppuccin-frappe:checked ~ .main {
+  --text-color: var(--ctp-mocha-text);
+  --subtext-color: var(--ctp-mocha-subtext0);
+  --bg-color: var(--ctp-mocha-base);
+  --surface-color: var(--ctp-mocha-surface0);
+}
+
+#theme-catppuccin-macchiato:checked ~ .main {
+  --text-color: var(--ctp-mocha-text);
+  --subtext-color: var(--ctp-mocha-subtext0);
+  --bg-color: var(--ctp-mocha-base);
+  --surface-color: var(--ctp-mocha-surface0);
+}
+
+/* Catppuccin Latte */
+#theme-catppuccin-latte:checked ~ .main {
+  --rosewater: #dc8a78;
+  --flamingo: #dd7878;
+  --pink: #ea76cb;
+  --mauve: #8839ef;
+  --red: #d20f39;
+  --maroon: #e64553;
+  --peach: #fe640b;
+  --yellow: #df8e1d;
+  --green: #40a02b;
+  --teal: #179299;
+  --sky: #04a5e5;
+  --sapphire: #209fb5;
+  --blue: #1e66f5;
+  --lavender: #7287fd;
+
+  --text-color: #4c4f69;
+  --subtext-color: #6c6f85;  /* Subtext0 */
+  --bg-color: #eff1f5;       /* base */
+  --surface-color: #ccd0da;  /* Surface0 */
+}
+
+/* Catppuccin Frappe */
+#theme-catppuccin-frappe:checked ~ .main {
+  --rosewater: #f2d5cf;
+  --flamingo: #eebebe;
+  --pink: #f4b8e4;
+  --mauve: #ca9ee6;
+  --red: #e78284;
+  --maroon: #ea999c;
+  --peach: #ef9f76;
+  --yellow: #e5c890;
+  --green: #a6d189;
+  --teal: #81c8be;
+  --sky: #99d1db;
+  --sapphire: #85c1dc;
+  --blue: #8caaee;
+  --lavender: #babbf1;
+
+  --text-color: #c6d0f5;
+  --subtext-color: #a5adce;  /* Subtext0 */
+  --bg-color: #303446;       /* base */
+  --surface-color: #414559;  /* Surface0 */
+}
+
+/* Catppuccin Macchiato */
+#theme-catppuccin-macchiato:checked ~ .main {
+  --rosewater: #f4dbd6;
+  --flamingo: #f0c6c6;
+  --pink: #f5bde6;
+  --mauve: #c6a0f6;
+  --red: #ed8796;
+  --maroon: #ee99a0;
+  --peach: #f5a97f;
+  --yellow: #eed49f;
+  --green: #a6da95;
+  --teal: #8bd5ca;
+  --sky: #91d7e3;
+  --sapphire: #7dc4e4;
+  --blue: #8aadf4;
+  --lavender: #b7bdf8;
+
+  --text-color: #cad3f5;
+  --subtext-color: #a5adcb;  /* Subtext0 */
+  --bg-color: #24273a;       /* base */
+  --surface-color: #363a4f;  /* Surface0 */
+}
+
+/* Catppuccin Mocha */
+#theme-catppuccin-mocha:checked ~ .main {
+  --rosewater: #f5e0dc;
+  --flamingo: #f2cdcd;
+  --pink: #f5c2e7;
+  --mauve: #cba6f7;
+  --red: #f38ba8;
+  --maroon: #eba0ac;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --sky: #89dceb;
+  --sapphire: #74c7ec;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
+
+  --text-color: #cdd6f4;
+  --subtext-color: #a6adc8;  /* Subtext0 */
+  --bg-color: #1e1e2e;       /* base */
+  --surface-color: #313244;  /* Surface0 */
+}
+
+#accent-catppuccin-rosewater:checked ~ .main {
+  --primary-color: var(--rosewater);
+}
+
+#accent-catppuccin-flamingo:checked ~ .main {
+  --primary-color: var(--flamingo);
+}
+
+#accent-catppuccin-pink:checked ~ .main {
+  --primary-color: var(--pink);
+}
+
+#accent-catppuccin-mauve:checked ~ .main {
+  --primary-color: var(--mauve);
+}
+
+#accent-catppuccin-red:checked ~ .main {
+  --primary-color: var(--red);
+}
+
+#accent-catppuccin-maroon:checked ~ .main {
+  --primary-color: var(--maroon);
+}
+
+#accent-catppuccin-peach:checked ~ .main {
+  --primary-color: var(--peach);
+}
+
+#accent-catppuccin-yellow:checked ~ .main {
+  --primary-color: var(--yellow);
+}
+
+#accent-catppuccin-green:checked ~ .main {
+  --primary-color: var(--green);
+}
+
+#accent-catppuccin-teal:checked ~ .main {
+  --primary-color: var(--teal);
+}
+
+#accent-catppuccin-sky:checked ~ .main {
+  --primary-color: var(--sky);
+}
+
+#accent-catppuccin-sapphire:checked ~ .main {
+  --primary-color: var(--sapphire);
+}
+
+#accent-catppuccin-blue:checked ~ .main {
+  --primary-color: var(--blue);
+}
+
+#accent-catppuccin-lavender:checked ~ .main {
+  --primary-color: var(--lavender);
+}
+
+
+#theme-amoled:checked ~ .main {
+  --text-color: #ffffff;
+  --subtext-color: #9a9a9a;
+  --bg-color: #000000;
+  --surface-color: #202020;
+  --primary-color: #89b4fa;
+}
+
+#theme-puke:checked ~ .main {
+  --bg-color: linear-gradient(
+    90deg,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(255, 154, 0, 1) 10%,
+      rgba(208, 222, 33, 1) 20%,
+      rgba(79, 220, 74, 1) 30%,
+      rgba(63, 218, 216, 1) 40%,
+      rgba(47, 201, 226, 1) 50%,
+      rgba(28, 127, 238, 1) 60%,
+      rgba(95, 21, 242, 1) 70%,
+      rgba(186, 12, 248, 1) 80%,
+      rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+    );
+  animation: gradient 0.5s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 100vw 0vw;
+    --text-color: #000000;
+  }
+
+  100% {
+    background-position: 0vw 0vw;
+    --text-color: #ffffff;
+  }
+}
+
+/* Hides the theme switch radio buttons */
+.theme-switch {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* largely stolen from https://alexandersandberg.github.io/theme-switcher/unlimited.html */

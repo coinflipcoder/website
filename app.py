@@ -162,9 +162,13 @@ def signWall():
 def favicon():
   return send_file("assets/favicon.gif")
 
-@app.route("/styles.css")
+@app.route("/style.css")
 def stylesheet():
-  return send_file("assets/styles.css")
+  return send_file("assets/style.css")
+
+@app.route("/theme.css")
+def colorsheet():
+  return send_file("assets/theme.css")
 
 @app.route("/robots.txt")
 def robots():
