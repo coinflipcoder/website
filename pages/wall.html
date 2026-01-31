@@ -16,21 +16,21 @@
         Please do not abuse this, else ill have to implement annoying restrictions.
       </p>
 
-      <form class="autographform" action="/wall" method="post">
-        <input id="name" name="name" type="text" placeholder="Sign Here">
-        <input id="message" name="message" type="text" placeholder="Message...">
-        <button type="submit">Submit</button>
+      <form class="align-center flex-row mt-20 mb-40 gap-10" action="/wall" method="post">
+        <input class="input" type="text" placeholder="Sign Here">
+        <input class="input flex-grow" type="text" placeholder="Message...">
+        <button class="button" type="submit">Submit</button>
       </form>
 
-      <div class="autographgrid">
+      <div class="autograph-grid mt-10">
         {% for row in rows %}
         <div class="autograph">
-          <div class="message">
-            <p>"</p>
-            <p id="message">{{ row[1] | escape }}</p>
-            <p>"</p>
+          <div class="flex-row justify-center gap-5">
+            <p class="primary large">"</p>
+            <p>{{ row[1] | escape }}</p>
+            <p class="primary large">"</p>
           </div>
-          <p id="name">~ {{ row[0] | escape }}</p>
+          <p class="subtext small">~ {{ row[0] | escape }}</p>
         </div>
         {% endfor %}
       </div>

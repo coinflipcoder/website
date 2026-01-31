@@ -10,21 +10,21 @@
     <div class="content">
       <h2 class="mt-20">My Hackspace Passport</h2>
 
-      <div class="hackspace-passport">
+      <div class="mt-40 mb-40 flex-row flex-wrap gap-10">
         {% for space in hackspaces %}
           <a href="{{ space['link'] }}", target="_blank">
-            <img src="/assets/hackspaces/{{ space['image'] }}" alt="{{ space['name'] }}" />
+            <img class="pointer hackimg" src="/assets/hackspaces/{{ space['image'] }}" alt="{{ space['name'] }}" />
           </a>
         {% endfor %}
       </div>
 
       <h2 class="mt-20">My Event Calendar</h2>
-      <div class="events">
+      <div class="flex-col">
         {% for event in events %}
-          <div>
+          <div class="flex-row gap-10">
             <p>></p>
             <a class="link" href="{{ event['link'] }}", target="_blank">{{ event['name'] }}</a>
-            <p class="events-time">({{ event['start'] }} - {{ event['end'] }})</p>
+            <p class="subtext">({{ event['start'] }} - {{ event['end'] }})</p>
           </div>
         {% endfor %} 
       </div>
