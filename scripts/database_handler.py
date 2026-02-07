@@ -2,9 +2,9 @@ from sqlite3 import connect
 from uuid import uuid4
 from os import getenv
 import requests
-from scripts.consts import FACT_URL
 
 DATABASE_FILE = getenv("DATABASE_PATH", "./database.db")
+FACT_URL = "https://uselessfacts.jsph.pl/api/v2/facts/random"
 
 counterTable = '''CREATE TABLE IF NOT EXISTS counter (
     value INTEGER NOT NULL DEFAULT 0

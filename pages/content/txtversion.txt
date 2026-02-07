@@ -2,12 +2,16 @@ So youre one of those creatures, huh.
 You think even HTML is bloat?
 Thats fine, because youre in luck! I made this txt version of my webbed site, just for you :)
 
+I am Fabi, a young and naive programmer from Germany who will retreat
+to the backend upon spotting a css class. Its nice to meet you! On
+this page you will find a variety of things I have wasted my time on.
 
+Sillies (only updated on redeployment)
+Useless fact: The past-tense of the English word “dare” is “durst”
+> https://uselessfacts.jsph.pl/api/v2/facts/6e82fbc8b8e5c212f0b607d5d9afaa21
 
-Hello there :3
-I am Fabi, a young and naive programmer from Germany who will retreat to the backend upon spotting a css class.
-Its nice to meet you! On this page you will find a variety of things I have wasted my time on.
-
+Big number go uppies: 45
+This is a text file. You cant press this button.
 
 
 
@@ -17,41 +21,65 @@ Here are some of the things I have worked on.
 
 ~[ Website ]~
 This website is built using Flask and deployed via Gunicorn. It uses Jinja to serve dynamic HTML files. Look ma, no Javascript!
+Languages: pythonhtmlcss
  - Github > https://github.com/coinflipcoder/website
 
 ~[ Velocity Plugin ]~
 A Minecraft Velocity plugin tailored to my network. It will not work on your server, but be my guest to do some tactical communism in my code.
+Languages: java
  - Github > https://github.com/coinflipcoder/CustomPlugin
 
 ~[ No Join Leave Message ]~
 Quick and dirty Minecraft Fabric mod that disabled joining and leaving messages.
+Languages: java
  - Github > https://github.com/coinflipcoder/No-Join-Leave-Message
  - Modrinth > https://modrinth.com/mod/no-join-leave-messages
 
 ~[ Better Beacon Range ]~
 Minecraft Fabric mod that makes the beacon effect range configurable.
+Languages: java
  - Github > https://github.com/coinflipcoder/Better-Beacon-Range
  - Modrinth > https://modrinth.com/mod/better-beacon-range-was-taken
 
 ~[ Neon ]~
 A Minecraft Fabric hacked client that I made to play on LiveOverflow's server. A lot of this code is 'borrowed' from other clients as this was my learning project.
+Languages: java
  - Github > https://github.com/coinflipcoder/neon
 
 ~[ Harder Dragon ]~
 Small Minecraft Paper plugin that makes the dragon fight incresingly more difficult.
+Languages: java
  - Github > https://github.com/coinflipcoder/Harder-Dragon
  - Modrinth > https://modrinth.com/plugin/harder-dragon
 
 ~[ Bad Discord Bot ]~
 A very bad and probably non functional Discord bot written in Python. The Framework I made is really nice :)
+Languages: python
  - Github > https://github.com/coinflipcoder/DiscordBot
 
 ~[ Activecraft-Core ]~
 This Minecraft plugin was the project that got me into programming. It was a lot of fun to work on it and its other modules at the time. Sadly, it was abandoned a long time ago.
+Languages: java
  - Github > https://github.com/ActiveCraftPlugins/ActiveCraft-Core
  - Spigot > https://www.spigotmc.org/resources/activecraft-core.95488
  - Docs > https://cplaiz.github.io/ActiveCraft-Core
 
+Look at this incredibly funny meme :3
+> https://coinflipcoder.dev/assets/images/itsallminecraft.png
+
+
+
+~~ /chaos ~~
+My Hackspace Passport
+- CCCDA > https://chaos-darmstadt.de
+- CCC-FFM > https://ccc-ffm.de/
+- Entropia > https://entropia.de/
+- Haxko > https://haxko.space/
+
+My Event Calendar
+- jetzt11 (07.11.2025-09.11.2025) > https://chaos.jetzt/articles/jetzt11.html
+- 39C3 (27.12.2025-30.12.2025) > https://events.ccc.de/congress/2025/infos/startpage.html
+- jetzt12 (20.02.2026-22.02.2026) > https://chaos.jetzt/12/
 
 
 
@@ -71,16 +99,52 @@ Feel free to reach out through any of the following platforms:
 ~[ Github ]~
 Coinflipcoder
 
-
-
 GPG Key
-
 This GPG key is used to sign commits on Github.
  - Download > https://coinflipcoder.dev/assets/gpg_key.asc
 
 
 
+~~ /wall ~~
+You cannot add to the autograph wall here. It is also only updated on redeployment.
 
-Web design is my passion. Copyleft 2025.
+"meow"
+~ amélie :3
 
-paws at u <3
+"nig"
+~ gah
+
+"<script>"
+~ \n
+
+"   "
+~    
+
+""
+~ 
+
+"test message"
+~ luv <3
+
+"meow"
+~ luv <3
+
+"WAOW!!! such a long message.. got lots to say!!! silly:3"
+~ hmm
+
+"Meow!!"
+~ silly
+
+"kisses"
+~ fabi
+
+
+
+~~ /travel ~~
+Is this map 100% accurate? No.
+> https://viaduct.world/share/m/J8bw75e6Rc_So4hW
+
+
+
+Last deployed: None UTC.
+Web design is my passion. Copyleft 2026.

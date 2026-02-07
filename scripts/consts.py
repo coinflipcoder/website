@@ -1,5 +1,3 @@
-FACT_URL = "https://uselessfacts.jsph.pl/api/v2/facts/random"
-
 DEPLOY_TIMESTAMP = None
 
 DEFAULT_THEME = "catppuccin-mocha"

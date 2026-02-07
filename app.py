@@ -3,7 +3,7 @@ from datetime import datetime
 import requests
 import scripts.database_handler as database_handler
 import json
-from scripts.consts import FACT_URL, DEFAULT_ACCENT, DEFAULT_THEME, VALID_ACCENTS, VALID_THEMES, DEPLOY_TIMESTAMP
+from scripts.consts import DEFAULT_ACCENT, DEFAULT_THEME, VALID_ACCENTS, VALID_THEMES, DEPLOY_TIMESTAMP
 from scripts.jinja_filters import create_filters
 
 app = Flask(__name__, template_folder="pages")

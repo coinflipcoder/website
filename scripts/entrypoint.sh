@@ -2,6 +2,8 @@
 # -u stops python from buffering prints until the script is done
 python3 -u /app/scripts/minifyfont.py --fonts-dir /app/assets/fonts --output-dir /app/assets/fonts
 
+python3 -u /app/scripts/txtgenerator.py --file-dir /app/pages/content --data-dir /app/pages/content
+
 # Environment variables
 WORKERS="${GUNICORN_WORKERS:-1}"
 THREADS="${GUNICORN_THREADS:-8}"
