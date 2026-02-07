@@ -56,7 +56,7 @@ def write_home(f):
   f.write(INTRODUCTION)
   newlines(f, 1)
   f.write('Sillies (only updated on redeployment)\n')
-  f.write(f'Useless fact: {fact['text']}\n')
+  f.write(f"Useless fact: {fact['text']}\n")
   f.write(f'> {fact['permalink']}\n')
   newlines(f, 1)
   f.write(f'Big number go uppies: {counter}\n')
