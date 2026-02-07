@@ -57,9 +57,9 @@ def write_home(f):
   newlines(f, 1)
   f.write('Sillies (only updated on redeployment)\n')
   f.write(f"Useless fact: {fact['text']}\n")
-  f.write(f'> {fact['permalink']}\n')
+  f.write(f"> {fact['permalink']}\n")
   newlines(f, 1)
-  f.write(f'Big number go uppies: {counter}\n')
+  f.write(f"Big number go uppies: {counter}\n")
   f.write('This is a text file. You cant press this button.\n')
 
 
@@ -70,16 +70,16 @@ def write_projects(f, projects):
   newlines(f, 1)
 
   for project in projects:
-    f.write(f'~[ {project['title']} ]~\n')
-    f.write(f'{project['description']}\n')
+    f.write(f"~[ {project['title']} ]~\n")
+    f.write(f"{project['description']}\n")
     
-    f.write(f'Languages: ')
+    f.write('Languages: ')
     for lang in project['languages']:
-      f.write(f'{lang}')
+      f.write(f"{lang}")
     f.write('\n')
 
     for link in project['links']:
-      f.write(f' - {link['name']} > {link['url']}\n')
+      f.write(f" - {link['name']} > {link['url']}\n")
     newlines(f, 1)
 
   f.write('Look at this incredibly funny meme :3\n')
@@ -90,22 +90,22 @@ def write_hackspaces(f, hackspaces, events):
   f.write('My Hackspace Passport\n')
 
   for space in hackspaces:
-    f.write(f'- {space['name']} > {space['link']}\n')
+    f.write(f"- {space['name']} > {space['link']}\n")
 
   newlines(f, 1)
   f.write('My Event Calendar\n')
 
   for event in events:
-    f.write(f'- {event['name']} ({event['start']}-{event['end']}) > {event['link']}\n')
+    f.write(f"- {event['name']} ({event['start']}-{event['end']}) > {event['link']}\n")
 
 
 def write_wall(f):
-  f.write(f'~~ /wall ~~\n')
-  f.write(f'You cannot add to the autograph wall here. It is also only updated on redeployment.\n')
+  f.write('~~ /wall ~~\n')
+  f.write('You cannot add to the autograph wall here. It is also only updated on redeployment.\n')
   newlines(f, 1)
   for entry in wall:
-    f.write(f'"{entry[1]}"\n')
-    f.write(f'~ {entry[0]}\n')
+    f.write(f"\"{entry[1]}\"\n")
+    f.write(f"~ {entry[0]}\n")
     newlines(f, 1)
 
 def write_travel(f):
@@ -115,8 +115,8 @@ def write_travel(f):
 
 
 def write_footer(f):
-  f.write(f'Last deployed: {DEPLOY_TIMESTAMP} UTC.\n')
-  f.write(f'Web design is my passion. Copyleft {year}.\n')
+  f.write(f"Last deployed: {DEPLOY_TIMESTAMP} UTC.\n")
+  f.write(f"Web design is my passion. Copyleft {year}.\n")
 
 
 def write(file_dir, data_files):
