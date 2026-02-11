@@ -18,5 +18,10 @@
     "name": "Haxko",
     "image": "haxko.svg",
     "link": "https://haxko.space/"
+  },
+  {
+    "name": "Krautspace",
+    "image": "krautspace.svg",
+    "link": "https://kraut.space/"
   }
 ]
