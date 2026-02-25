@@ -23,5 +23,10 @@
     "name": "Krautspace",
     "image": "krautspace.svg",
     "link": "https://kraut.space/"
+  },
+  {
+    "name": "Chaostreff Flensburg",
+    "image": "chaostreff-flensburg.png",
+    "link": "https://chaostreff-flensburg.de"
   }
 ]
