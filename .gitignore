@@ -3,7 +3,7 @@ __pycache__/
 
 database.db
 
-# Dont push generated font files
+# Dont push generated files
 assets/fonts/MesloLGMNerdFont-Regular.woff2
 assets/fonts/MesloLGMNerdFont-Bold.woff2
 assets/fonts/MesloLGMNerdFont-Italic.woff2
