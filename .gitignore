@@ -8,4 +8,6 @@ assets/fonts/MesloLGMNerdFont-Regular.woff2
 assets/fonts/MesloLGMNerdFont-Bold.woff2
 assets/fonts/MesloLGMNerdFont-Italic.woff2
 assets/fonts/MesloLGMNerdFont-BoldItalic.woff2
-assets/fonts/used_chars.txt
+
+# Or the generated txt version
+pages/content/txtversion.txt
