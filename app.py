@@ -35,7 +35,7 @@ with open('pages/content/events.json', 'r') as file:
 
 @app.route("/")
 def mainPage():
-  if ("curl" in request.headers.get("User-Agent").lower()):
+  if ("curl" in request.headers.get("User-Agent", "").lower()):
     response = make_response(boykisser, 200)
     response.mimetype = "text/plain"
     return response
@@ -126,11 +126,9 @@ def txtSite():
 
 @app.route('/increment', methods=['POST'])
 def clicked():
-  real_ip = request.headers.get("X-Forwarded-For")
-  if real_ip != None: ip = real_ip
-  else: ip = request.remote_addr
+  ip = request.headers.get("X-Real-IP", request.remote_addr)
   
-  database_handler.increment(request.headers.get("User-Agent"), ip)
+  database_handler.increment(request.headers.get("User-Agent", '-/-'), ip)
   return redirect('/')
 
 @app.route('/reroll', methods=['POST'])
@@ -140,16 +138,14 @@ def rerollFact():
 
 @app.route("/wall", methods=['POST'])
 def signWall():
-  name = request.form.get('name').strip()
-  message = request.form.get('message').strip()
+  name = request.form.get('name', '').strip()
+  message = request.form.get('message', '').strip()
 
   if not message or not name: return redirect('/wall')
 
-  real_ip = request.headers.get("X-Forwarded-For")
-  if real_ip != None: ip = real_ip
-  else: ip = request.remote_addr
+  ip = request.headers.get("X-Real-IP", request.remote_addr)
 
-  database_handler.addAutograph(name, message, request.headers.get("User-Agent"), ip)
+  database_handler.addAutograph(name, message, request.headers.get("User-Agent", '-/-'), ip)
   return redirect('/wall')
 
 
@@ -177,10 +173,6 @@ def robots():
 @app.route("/fabi.gif")
 def myButton():
   return send_file("assets/88x31s/fabi.gif")
-
-@app.route("/assets/gpg_key.asc")
-def getGPGKey():
-  return send_file("assets/gpg_key.asc")
 
 @app.route("/assets/images/<image>")
 def getImage(image):
