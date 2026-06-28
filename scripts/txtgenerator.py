@@ -34,9 +34,10 @@ Feel free to reach out through any of the following platforms:
 ~[ Github ]~
 Coinflipcoder
 
-GPG Key
-This GPG key is used to sign commits on Github.
- - Download > https://coinflipcoder.dev/assets/gpg_key.asc\n"""
+SSH Keys
+These are my SSH Public Keys:
+ - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEAhXUVzQ3noNoGLejF6sViSCFrWbEa/bwfYE74Fbdcu coinflipmachine
+ - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMtY0fiIrwo9nL5GXdnRVAW+Rq6EtHqq8laHYnjnPd2H coinfliplaptop\n"""
 
 class DataFiles:
     def __init__(self, projects, hackspaces, events):
@@ -83,7 +84,7 @@ def write_projects(f, projects):
     newlines(f, 1)
 
   f.write('Look at this incredibly funny meme :3\n')
-  f.write('> https://coinflipcoder.dev/assets/images/itsallminecraft.png\n')
+  f.write('> https://fabi.cat/assets/images/itsallminecraft.png\n')
 
 def write_hackspaces(f, hackspaces, events):
   f.write('~~ /chaos ~~\n')
