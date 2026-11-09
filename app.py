@@ -45,9 +45,9 @@ def mainPage():
 
   (theme, accent) = getTheme(request)
 
-  return render_template("home.html", 
-    year = year, clicks = counter, fact = fact['text'], source = fact['permalink'], 
-    friend_buttons = friend_buttons, silly_buttons = silly_buttons, 
+  return render_template("home.html",
+    year = year, clicks = counter, fact = fact['text'], source = fact['permalink'],
+    friend_buttons = friend_buttons, silly_buttons = silly_buttons,
     theme = theme, accent = accent,
     deployed = DEPLOY_TIMESTAMP
   )
@@ -56,8 +56,8 @@ def mainPage():
 def projectsPage():
   (theme, accent) = getTheme(request)
 
-  return render_template("projects.html", 
-    year = year, projects = projects, 
+  return render_template("projects.html",
+    year = year, projects = projects,
     theme = theme, accent = accent,
     deployed = DEPLOY_TIMESTAMP
   )
@@ -66,7 +66,7 @@ def projectsPage():
 def chaosPage():
   (theme, accent) = getTheme(request)
 
-  return render_template("chaos.html", 
+  return render_template("chaos.html",
     hackspaces = hackspaces, events = events,
     theme = theme, accent = accent,
     deployed = DEPLOY_TIMESTAMP, year = year
@@ -76,8 +76,8 @@ def chaosPage():
 def aboutPage():
   (theme, accent) = getTheme(request)
 
-  return render_template("about.html", 
-    year = year, 
+  return render_template("about.html",
+    year = year,
     theme = theme, accent = accent,
     deployed = DEPLOY_TIMESTAMP
   )
@@ -86,8 +86,8 @@ def aboutPage():
 def blogPage():
   (theme, accent) = getTheme(request)
 
-  return render_template("blog.html", 
-    year = year, 
+  return render_template("blog.html",
+    year = year,
     theme = theme, accent = accent,
     deployed = DEPLOY_TIMESTAMP
   )
@@ -98,8 +98,8 @@ def wallPage():
 
   (theme, accent) = getTheme(request)
 
-  return render_template("wall.html", 
-    year=year, rows = rows, 
+  return render_template("wall.html",
+    year=year, rows = rows,
     theme = theme, accent = accent,
     deployed = DEPLOY_TIMESTAMP
   )
@@ -108,8 +108,8 @@ def wallPage():
 def travelPage():
   (theme, accent) = getTheme(request)
 
-  return render_template("travel.html", 
-    year = year, 
+  return render_template("travel.html",
+    year = year,
     theme = theme, accent = accent,
     deployed = DEPLOY_TIMESTAMP
   )
@@ -127,7 +127,7 @@ def txtSite():
 @app.route('/increment', methods=['POST'])
 def clicked():
   ip = request.headers.get("X-Real-IP", request.remote_addr)
-  
+
   database_handler.increment(request.headers.get("User-Agent", '-/-'), ip)
   return redirect('/')
 
