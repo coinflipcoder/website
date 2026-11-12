@@ -1,9 +1,10 @@
-*.db
-__pycache/
+**/*.db
+**/*.db-*
+**/__pycache__
 .venv/
 Dockerfile*
 start.sh
 .git
-.github
 .gitignore
 .dockerignore
+pages/content/txtversion.txt

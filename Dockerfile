@@ -1,27 +1,34 @@
-FROM python:3.10-alpine
+FROM python:3.13-slim-trixie
 
-# Add user/group with the same id that the container will run as
-RUN addgroup -S 985 && adduser -S 985 -G 985
+ARG APP_UID=985
+ARG APP_GID=985
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    DATABASE_PATH=/data/database.db
+
+# 985 is only of importance because my deployment server generated that for this containers uid/gid
+RUN groupadd --system --gid ${APP_GID} app \
+ && useradd  --system --uid ${APP_UID} --gid ${APP_GID} \
+             --no-create-home --shell /usr/sbin/nologin app
 
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
-# app files need to be owned by the user running the app
-RUN chown -R 985:985 /app
+RUN python3 scripts/minifyfont.py --fonts-dir assets/fonts --output-dir assets/fonts
 
-# the folders need execute (and write, because of sqlite)
-RUN chmod -R 770 /app
+# /txt is served from pages/content/txtversion.txt, but the real file is
+# generated at startup into the writable /data volume
+RUN ln -sf /data/txtversion.txt pages/content/txtversion.txt \
+ && chmod 755 scripts/entrypoint.sh \
+ && install -d -o app -g app -m 750 /data
 
-# the files dont
-RUN find /app -type f -print0 | xargs -0 chmod 440
-
-# and the entrypoint / minify script, as those need to be executed
-RUN chmod +x /app/scripts/entrypoint.sh /app/scripts/minifyfont.py
-
-USER 985:985
-
+USER app
+EXPOSE 8000
 CMD ["/app/scripts/entrypoint.sh"]

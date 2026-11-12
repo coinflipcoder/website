@@ -5,7 +5,6 @@ from datetime import datetime
 from consts import DEPLOY_TIMESTAMP
 import database_handler as database_handler
 
-year = datetime.now().year
 counter = database_handler.getButtonValue()
 fact = database_handler.getCurrentFact()
 wall = database_handler.getAutographs()
@@ -73,7 +72,7 @@ def write_projects(f, projects):
   for project in projects:
     f.write(f"~[ {project['title']} ]~\n")
     f.write(f"{project['description']}\n")
-    
+
     f.write('Languages: ')
     for lang in project['languages']:
       f.write(f"{lang}")
@@ -116,8 +115,8 @@ def write_travel(f):
 
 
 def write_footer(f):
-  f.write(f"Last deployed: {DEPLOY_TIMESTAMP} UTC.\n")
-  f.write(f"Web design is my passion. Copyleft {year}.\n")
+  f.write(f"Last deployed: {datetime.now()} UTC.\n")
+  f.write(f"Web design is my passion. Copyleft {datetime.now().year}.\n")
 
 
 def write(file_dir, data_files):

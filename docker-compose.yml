@@ -1,0 +1,35 @@
+services:
+  website:
+    container_name: website
+    build: .
+    image: website:local
+    restart: unless-stopped
+    environment:
+      GUNICORN_WORKERS: 4
+      GUNICORN_THREADS: 4
+    volumes:
+      - /var/lib/website:/data
+    networks: [proxynet]
+    stop_grace_period: 15s
+
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          pids: 256
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  proxynet:
+    external: true
+
+
+# this is my personal docker-compose file, here as an example deployment, because I sure had my fun figuring this all out at first
